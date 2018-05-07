@@ -63,7 +63,8 @@ public class NumberController {
 		
 		secController.setArr(intArray);
 
-		Stage stage = new Stage();
+//		Stage stage = new Stage();
+		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		stage.setScene(new Scene(root));
 		stage.show();
 	}
@@ -122,5 +123,12 @@ public class NumberController {
 
 	public void handleNoRepeat(ActionEvent event) {
 		numbers = new ArrayList<Integer>();
+	}
+	
+	public void setList(int[] array) {
+		all.clear();
+		for (int i = 0; i < array.length; i++) {
+		   all.add(array[i]);
+		}
 	}
 }

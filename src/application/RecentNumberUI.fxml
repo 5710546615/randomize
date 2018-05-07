@@ -8,9 +8,9 @@
 
 <FlowPane hgap="10.0" prefHeight="45.0" prefWidth="310.0" vgap="10.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.RecentNumberController">
    <children>
-      <Button mnemonicParsing="false" text="&lt; Back" />
+      <Button mnemonicParsing="false" onAction="#changeSceneToNumber" text="&lt; Back" />
       <Label alignment="CENTER" prefHeight="17.0" prefWidth="167.0" text="Recent" />
-      <Button mnemonicParsing="false" text="Reset" />
+      <Button mnemonicParsing="false" onAction="#handleReset" text="Reset" />
       <ListView fx:id="list" prefHeight="200.0" prefWidth="288.0" />
    </children>
    <padding>
