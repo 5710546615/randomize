@@ -12,7 +12,7 @@
    <children>
       <Button mnemonicParsing="false" onAction="#changeSceneToHome" prefWidth="75.0" text="&lt; Back" />
       <Label alignment="CENTER" prefWidth="225.0" text="Number" />
-      <Button mnemonicParsing="false" prefWidth="75.0" text="Recent" />
+      <Button mnemonicParsing="false" onAction="#changeSceneToRecent" prefWidth="75.0" text="Recent" />
       <Label prefWidth="65.0" />
       <TextField fx:id="min" alignment="CENTER" prefWidth="75.0" promptText="MIN" />
       <Label prefWidth="75.0" />

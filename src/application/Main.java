@@ -11,8 +11,8 @@ public class Main extends Application {
 	@Override
 	public void start(Stage stage) {
 		try {
-//			Parent root = FXMLLoader.load(getClass().getResource("RandomizeUI.fxml"));
-			Parent root = FXMLLoader.load(getClass().getResource("NumberUI.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("RandomizeUI.fxml"));
+//			Parent root = FXMLLoader.load(getClass().getResource("NumberUI.fxml"));
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
 			stage.sizeToScene();
