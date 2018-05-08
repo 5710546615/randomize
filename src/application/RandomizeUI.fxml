@@ -9,7 +9,7 @@
    <children>
       <Label alignment="CENTER" prefHeight="17.0" prefWidth="552.0" text="Randomize" />
       <Button mnemonicParsing="false" onAction="#changeSceneToNumber" prefWidth="150.0" text="Number" />
-      <Button mnemonicParsing="false" prefWidth="150.0" text="Dice" />
+      <Button mnemonicParsing="false" onAction="#changeSceneToDice" prefWidth="150.0" text="Dice" />
       <Button mnemonicParsing="false" prefWidth="150.0" text="Card" />
       <Button mnemonicParsing="false" prefWidth="150.0" text="Yes or No" />
       <Button mnemonicParsing="false" prefWidth="150.0" text="Coin" />
