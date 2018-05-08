@@ -1,7 +1,9 @@
 package application;
 
 import java.io.IOException;
+import java.net.URL;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -10,13 +12,34 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class RandomizeController {
-	
+
 	public void changeSceneToNumber(ActionEvent event) throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("NumberUI.fxml"));
-		Scene scene = new Scene(root);
-		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		stage.setScene(scene);
-		stage.show();
+		int min = 0;
+		int max = 99;
+		RandomNumber rn = new RandomNumber(min, max);
+
+		try {
+			URL url = getClass().getResource("NumberUI.fxml");
+			if (url == null) {
+				System.out.println("Couldn't find file: NumberUI.fxml");
+				Platform.exit();
+			}
+			FXMLLoader loader = new FXMLLoader(url);
+			Parent root = loader.load();
+
+			NumberController controller = loader.getController();
+			controller.setRandomNumber(rn);
+
+			Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+			Scene scene = new Scene(root);
+			stage.setScene(scene);
+			stage.sizeToScene();
+			stage.setTitle("Random Number");
+			stage.show();
+		} catch (Exception e) {
+			System.out.println("Exception creating scene: " + e.getMessage());
+		}
 	}
-	
+
 }

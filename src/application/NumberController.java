@@ -2,8 +2,6 @@ package application;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,33 +12,61 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class NumberController {
 	@FXML
-	private TextField min;
+	private TextField min_tf;
 	@FXML
-	private TextField max;
+	private TextField max_tf;
 	@FXML
-	private Label randomed;
+	private Label randomed_lb;
 	@FXML
-	private RadioButton norepeat;
+	private RadioButton norepeat_rb;
 	@FXML
-	private Label defaultfield;
+	private Label default_lb;
 
-	private List<Integer> numbers;
+	private RandomNumber rn;
 
-	public List<Integer> all;
-
-	private Random rn;
-
-	public void initialize() {
-		all = new ArrayList<Integer>();
-		rn = new Random();
+	public RandomNumber getRandomNumber() {
+		return rn;
 	}
 
-	public void changeSceneToHome(ActionEvent event) throws IOException {
+	public void setRandomNumber(RandomNumber rn) {
+		this.rn = rn;
+	}
+
+	public void handleRandom(ActionEvent event) {
+		default_lb.setVisible(false);
+		int min = rn.getMin();
+		int max = rn.getMax();
+		int randomed = 0;
+
+		try {
+			min = Integer.parseInt(min_tf.getText().trim());
+			max = Integer.parseInt(max_tf.getText().trim());
+		} catch (Exception e) {
+
+		}
+
+		rn.setMin(min);
+		rn.setMax(max);
+
+		randomed = rn.getRandomed();
+
+		randomed_lb.setText(String.valueOf(randomed));
+
+		if (randomed == Integer.MIN_VALUE) {
+			randomed_lb.setText("?");
+		}
+
+	}
+
+	public void handleNoRepeat(ActionEvent event) {
+		rn.setRands(new ArrayList<Integer>());
+	}
+
+	public void handleBack(ActionEvent event) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("RandomizeUI.fxml"));
 		Scene scene = new Scene(root);
 		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -48,95 +74,10 @@ public class NumberController {
 		stage.show();
 	}
 
-	public void changeSceneToRecent(ActionEvent event) throws IOException {
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("RecentNumberUI.fxml"));
-		Parent root = (Parent) loader.load();
-
-		RecentNumberController secController = loader.getController();
-		
-		int[] intArray = new int[all.size()];
-		for (int i = 0; i < intArray.length; i++) {
-		    intArray[i] = all.get(i);
-		}
-		
-		secController.setArr(intArray);
-
-		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-//		Stage stage = new Stage();
-		stage.setScene(new Scene(root));
-		stage.show();
+	public void handleRecent(ActionEvent event) throws IOException {
+		RecentView view = new RecentView(rn);
+		rn.addObserver(view);
+		view.run();
 	}
 
-	public void handleRandom(ActionEvent event) throws IOException {
-		defaultfield.setVisible(false);
-
-		boolean isSet = false;
-
-		int min_num;
-		int max_num;
-
-		try {
-			min_num = Integer.parseInt(min.getText());
-			max_num = Integer.parseInt(max.getText());
-		} catch (Exception ex) {
-			min_num = 0;
-			max_num = 99;
-		}
-
-		if (min_num > max_num) {
-			int tmp = min_num;
-			min_num = max_num;
-			max_num = tmp;
-		}
-
-		int range = max_num - min_num + 1;
-		int rand = rn.nextInt(range) + min_num;
-
-		if (norepeat.isSelected()) {
-			if (!numbers.contains(rand)) {
-				numbers.add(rand);
-			} else if (numbers.size() < range) {
-				do {
-					rand = rn.nextInt(range) + min_num;
-				} while (numbers.contains(rand));
-
-				numbers.add(rand);
-			} else {
-				isSet = true;
-				randomed.setText("?");
-				numbers = new ArrayList<Integer>();
-				final Stage dialog = new Stage();
-                dialog.initModality(Modality.APPLICATION_MODAL);
-                Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                dialog.initOwner(primaryStage);
-                
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("DialogUI.fxml"));
-        		Parent root = (Parent) loader.load();
-                
-                Scene dialogScene = new Scene(root);
-                dialog.setScene(dialogScene);
-                dialog.show();
-			}
-		}
-
-		if (!isSet) {
-			min.setText(String.valueOf(min_num));
-			max.setText(String.valueOf(max_num));
-
-			all.add(rand);
-
-			randomed.setText(String.valueOf(rand));
-		}
-	}
-
-	public void handleNoRepeat(ActionEvent event) {
-		numbers = new ArrayList<Integer>();
-	}
-	
-	public void setList(int[] array) {
-		all.clear();
-		for (int i = 0; i < array.length; i++) {
-		   all.add(array[i]);
-		}
-	}
 }
