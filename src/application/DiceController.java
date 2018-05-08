@@ -19,44 +19,43 @@ public class DiceController {
 	private Label randomed_lb;
 	@FXML
 	private Label default_lb;
-	
+
 	private RandomNumber rn;
-	
+
 	public RandomNumber getRandomNumber() {
 		return rn;
 	}
-	
+
 	public void setRandomNumber(RandomNumber rn) {
 		this.rn = rn;
 	}
-	
+
 	public void handleRoll(ActionEvent event) {
 		default_lb.setVisible(false);
-		int n = 1;
+
 		int min = rn.getMin();
 		int max = rn.getMax();
 		int randomed = 0;
-		
+		int n = 1;
 		try {
 			n = Integer.parseInt(num_tf.getText().trim());
-			num_tf.setText(String.valueOf(n));
+			max = 6 * n;
 		} catch (Exception e) {
-			num_tf.setText("1");
+
 		}
-		
+
+		num_tf.setText(String.valueOf(max / 6));
+
 		rn.setMin(min);
 		rn.setMax(max);
-		
-		int sum = 0;
-		for (int i = 0 ; i < n ; i++) {
-			sum+=rn.getRandomed();
-		}
-		
-		randomed = sum;
+
+		do {
+			randomed = rn.getRandomed();
+		} while (randomed < n);
 		
 		randomed_lb.setText(String.valueOf(randomed));
 	}
-	
+
 	public void handleBack(ActionEvent event) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("RandomizeUI.fxml"));
 		Scene scene = new Scene(root);
@@ -64,10 +63,10 @@ public class DiceController {
 		stage.setScene(scene);
 		stage.show();
 	}
-	
+
 	public void handleRecent(ActionEvent event) throws IOException {
-//		RecentView view = new RecentView(rn);
-//		rn.addObserver(view);
-//		view.run();
+		RecentView view = new RecentView(rn);
+		rn.addObserver(view);
+		view.run();
 	}
 }
