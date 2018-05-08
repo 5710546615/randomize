@@ -38,6 +38,11 @@ public class NumberController {
 
 	public void handleRandom(ActionEvent event) {
 		default_lb.setVisible(false);
+		
+		if (norepeat_rb.isSelected() && rn.getRands() == null) {
+			rn.setRands(new ArrayList<Integer>());
+		}
+		
 		int min = rn.getMin();
 		int max = rn.getMax();
 		int randomed = 0;
@@ -48,6 +53,9 @@ public class NumberController {
 		} catch (Exception e) {
 
 		}
+		
+		min_tf.setText(String.valueOf(min));
+		max_tf.setText(String.valueOf(max));
 
 		rn.setMin(min);
 		rn.setMax(max);

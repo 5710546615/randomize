@@ -8,30 +8,30 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.text.Font?>
 
-<FlowPane hgap="10.0" vgap="10.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.NumberController">
+<FlowPane hgap="10.0" prefHeight="400.0" prefWidth="600.0" vgap="10.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.NumberController">
    <children>
       <Button mnemonicParsing="false" onAction="#handleBack" prefWidth="75.0" text="&lt; Back" />
-      <Label alignment="CENTER" prefWidth="225.0" text="Number" />
+      <Label alignment="CENTER" prefHeight="17.0" prefWidth="396.0" text="Number" />
       <Button mnemonicParsing="false" onAction="#handleRecent" prefWidth="75.0" text="Recent" />
-      <Label prefWidth="65.0" />
+      <Label prefHeight="17.0" prefWidth="161.0" />
       <TextField fx:id="min_tf" alignment="CENTER" prefWidth="75.0" promptText="MIN" />
       <Label prefWidth="75.0" />
       <TextField fx:id="max_tf" alignment="CENTER" prefWidth="75.0" promptText="MAX" />
-      <Label prefWidth="65.0" />
-      <Label prefWidth="150.0" />
+      <Label prefHeight="17.0" prefWidth="148.0" />
+      <Label prefHeight="17.0" prefWidth="218.0" />
       <Label fx:id="default_lb" alignment="CENTER" prefWidth="100.0" text="(Default 0-&gt;99)" />
-      <Label prefHeight="17.0" prefWidth="100.0" />
-      <Label prefWidth="140.0" />
+      <Label prefHeight="17.0" prefWidth="233.0" />
+      <Label prefHeight="17.0" prefWidth="223.0" />
       <RadioButton fx:id="norepeat_rb" mnemonicParsing="false" onAction="#handleNoRepeat" text="No Repeat" />
       <Label prefWidth="140.0" />
-      <Label prefWidth="115.0" />
+      <Label prefHeight="17.0" prefWidth="195.0" />
       <Label fx:id="randomed_lb" alignment="CENTER" prefHeight="150.0" prefWidth="150.0" text="?">
          <font>
             <Font size="64.0" />
          </font>
       </Label>
-      <Label prefWidth="115.0" />
-      <Label prefHeight="17.0" prefWidth="157.0" />
+      <Label prefHeight="17.0" prefWidth="150.0" />
+      <Label prefHeight="17.0" prefWidth="237.0" />
       <Button mnemonicParsing="false" onAction="#handleRandom" prefWidth="75.0" text="Random" />
    </children>
    <padding>

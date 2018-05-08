@@ -31,22 +31,22 @@ public class RecentView extends Stage implements Observer {
 		 stage = this;
 		 
 		 FlowPane root = new FlowPane();
-		 root.setPrefWidth(92);
-		 root.setPrefHeight(200);
+		 root.setPrefWidth(300);
+		 root.setPrefHeight(400);
 		 root.setHgap(10);
 		 root.setVgap(10);
 		 root.setPadding(new Insets(10, 10, 10, 10));
 		 
 		 Label recent_lb = new Label("Recent");
-		 recent_lb.setPrefWidth(200);
+		 recent_lb.setPrefWidth(300);
 		 recent_lb.setAlignment(Pos.CENTER);
 		 
 		 list_lv = new ListView<String>();
-		 list_lv.setPrefHeight(200);
-		 list_lv.setPrefWidth(200);
+		 list_lv.setPrefHeight(300);
+		 list_lv.setPrefWidth(300);
 		 
 		 Label tmp = new Label();
-		 tmp.setPrefWidth(71);
+		 tmp.setPrefWidth(125);
 		 
 		 Button reset_btn = new Button("Reset");
 		 

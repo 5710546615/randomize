@@ -30,7 +30,7 @@ public class RandomNumber extends Observable {
 		Random rand = new Random();
 		int range = max - min + 1;
 		randomed = rand.nextInt(range) + min;
-
+		
 		if (rands != null) {
 			if (!rands.contains(randomed)) {
 				rands.add(randomed);
