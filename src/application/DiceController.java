@@ -1,5 +1,6 @@
 package application;
 
+import java.io.File;
 import java.io.IOException;
 
 import javafx.event.ActionEvent;
@@ -10,17 +11,27 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 public class DiceController {
 	@FXML
 	private TextField num_tf;
 	@FXML
-	private Label randomed_lb;
-	@FXML
 	private Label default_lb;
+	@FXML
+	private HBox HBox1;
+	@FXML
+	private HBox HBox2;
 
 	private RandomNumber rn;
+	
+	public void initialize() {
+		HBox1.setVisible(false);
+		HBox2.setVisible(false);
+	}
 
 	public RandomNumber getRandomNumber() {
 		return rn;
@@ -33,27 +44,33 @@ public class DiceController {
 	public void handleRoll(ActionEvent event) {
 		default_lb.setVisible(false);
 
-		int min = rn.getMin();
-		int max = rn.getMax();
 		int randomed = 0;
 		int n = 1;
 		try {
 			n = Integer.parseInt(num_tf.getText().trim());
-			max = 6 * n;
 		} catch (Exception e) {
-
+			num_tf.setText(String.valueOf(n));
 		}
 
-		num_tf.setText(String.valueOf(max / 6));
+		if (n == 1) {
+			HBox1.setVisible(true);
+			HBox2.setVisible(false);
+		} else if (n == 2) {
+			HBox1.setVisible(false);
+			HBox2.setVisible(true);
+		}
 
-		rn.setMin(min);
-		rn.setMax(max);
+//		int sum = 0;
+//		for (int i = 0; i < n; i++) {
+//			sum += rn.getRandomed();
+//		}
+//
+//		randomed = sum;
+//
+//		File file = new File("images/dices/dice" + randomed + ".png");
+//		Image image = new Image(file.toURI().toString());
+//		rand1_iv.setImage(image);
 
-		do {
-			randomed = rn.getRandomed();
-		} while (randomed < n);
-		
-		randomed_lb.setText(String.valueOf(randomed));
 	}
 
 	public void handleBack(ActionEvent event) throws IOException {
