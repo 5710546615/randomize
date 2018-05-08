@@ -1,10 +1,14 @@
 package application;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import javafx.scene.layout.HBox;
+import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -25,13 +29,39 @@ public class RecentView extends Stage implements Observer {
 
 	private void initComponents() throws IOException {
 		 stage = this;
-		 HBox root = new HBox();
-		 root.setPadding(new Insets(10));
-		 root.setAlignment(Pos.CENTER);
+		 
+		 FlowPane root = new FlowPane();
+		 root.setPrefWidth(92);
+		 root.setPrefHeight(200);
+		 root.setHgap(10);
+		 root.setVgap(10);
+		 root.setPadding(new Insets(10, 10, 10, 10));
+		 
+		 Label recent_lb = new Label("Recent");
+		 recent_lb.setPrefWidth(200);
+		 recent_lb.setAlignment(Pos.CENTER);
 		 
 		 list_lv = new ListView<String>();
-		 list_lv.setPrefWidth(196);
+		 list_lv.setPrefHeight(200);
+		 list_lv.setPrefWidth(200);
+		 
+		 Label tmp = new Label();
+		 tmp.setPrefWidth(71);
+		 
+		 Button reset_btn = new Button("Reset");
+		 
+		 reset_btn.setOnAction(new EventHandler<ActionEvent>() {
+			    @Override public void handle(ActionEvent e) {
+			        list_lv.getItems().clear();
+			        rn.clearAll();
+			    }
+			});
+		 
+		 root.getChildren().add(recent_lb);
 		 root.getChildren().add(list_lv);
+		 root.getChildren().add(tmp);
+		 root.getChildren().add(reset_btn);
+		 
 		 Scene scene = new Scene(root);
 		 stage.setScene(scene);
 		 stage.setTitle("Recent");

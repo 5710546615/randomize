@@ -45,7 +45,8 @@ public class RandomNumber extends Observable {
 			}
 		}
 		
-		allNumbers.add(randomed);
+		if (randomed != Integer.MIN_VALUE)
+			allNumbers.add(randomed);
 		
 		setChanged();
 		notifyObservers();
@@ -70,6 +71,11 @@ public class RandomNumber extends Observable {
 
 	public void setRands(List<Integer> rands) {
 		this.rands = rands;
+	}
+	
+	public void clearAll() {
+		allNumbers = new ArrayList<Integer>();
+		rands = null;
 	}
 
 }
