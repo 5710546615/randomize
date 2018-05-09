@@ -101,7 +101,32 @@ public class RandomizeController {
 	}
 
 	public void changeSceneToCard(ActionEvent event) {
+		int min = 1;
+		int max = 52;
+		RandomNumber rn = new RandomNumber(min, max);
 
+		try {
+			URL url = getClass().getResource("CardUI.fxml");
+			if (url == null) {
+				System.out.println("Couldn't find file: CardUI.fxml");
+				Platform.exit();
+			}
+			FXMLLoader loader = new FXMLLoader(url);
+			Parent root = loader.load();
+
+			CardController controller = loader.getController();
+			controller.setRandomNumber(rn);
+
+			Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+			Scene scene = new Scene(root);
+			stage.setScene(scene);
+			stage.sizeToScene();
+			stage.setTitle("Cards");
+			stage.show();
+		} catch (Exception e) {
+			System.out.println("Exception creating scene: " + e.getMessage());
+		}
 	}
 
 	public void changeSceneToCoin(ActionEvent event) {
@@ -134,7 +159,32 @@ public class RandomizeController {
 	}
 
 	public void changeSceneToRPS(ActionEvent event) {
+		int min = 1;
+		int max = 3;
+		RandomNumber rn = new RandomNumber(min, max);
 
+		try {
+			URL url = getClass().getResource("RPSUI.fxml");
+			if (url == null) {
+				System.out.println("Couldn't find file: RPSUI.fxml");
+				Platform.exit();
+			}
+			FXMLLoader loader = new FXMLLoader(url);
+			Parent root = loader.load();
+
+			RPSController controller = loader.getController();
+			controller.setRandomNumber(rn);
+
+			Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+			Scene scene = new Scene(root);
+			stage.setScene(scene);
+			stage.sizeToScene();
+			stage.setTitle("Rock-Paper-Scissors");
+			stage.show();
+		} catch (Exception e) {
+			System.out.println("Exception creating scene: " + e.getMessage());
+		}
 	}
 
 	public void changeSceneToFood(ActionEvent event) {

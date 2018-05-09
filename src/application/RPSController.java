@@ -13,16 +13,16 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.HBox;
+import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
 
-public class DiceController {
+public class RPSController {
 	@FXML
 	private TextField num_tf;
 	@FXML
 	private Label default_lb;
 	@FXML
-	private HBox list_hb;
+	private FlowPane list_fp;
 
 	private RandomNumber rn;
 
@@ -34,10 +34,11 @@ public class DiceController {
 		this.rn = rn;
 	}
 
-	public void handleRoll(ActionEvent event) {
+	public void handlePlay(ActionEvent event) {
 		default_lb.setVisible(false);
 
 		int n = 1;
+
 		try {
 			n = Integer.parseInt(num_tf.getText().trim());
 		} catch (Exception e) {
@@ -48,20 +49,20 @@ public class DiceController {
 		Image image;
 		ImageView imageview;
 
-		list_hb.getChildren().clear();
+		list_fp.getChildren().clear();
 
-		if (n > 0 && n < 4) {
+		if (n > 0 && n < 5) {
 			for (int i = 0; i < n; i++) {
-
-				file = new File("images/dice/dice" + rn.getRandomed() + ".png");
+				file = new File("images/rps/" + rn.getRandomed() + ".png");
 				image = new Image(file.toURI().toString());
 				imageview = new ImageView(image);
-				imageview.setFitHeight(150);
-				imageview.setFitWidth(150);
+				imageview.setFitHeight(125);
+				imageview.setFitHeight(125);
 
-				list_hb.getChildren().add(imageview);
+				list_fp.getChildren().add(imageview);
 			}
 		}
+		
 	}
 
 	public void handleBack(ActionEvent event) throws IOException {

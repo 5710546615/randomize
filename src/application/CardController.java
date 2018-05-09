@@ -9,21 +9,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
-public class DiceController {
-	@FXML
-	private TextField num_tf;
-	@FXML
-	private Label default_lb;
+public class CardController {
 	@FXML
 	private HBox list_hb;
-
+	
 	private RandomNumber rn;
 
 	public RandomNumber getRandomNumber() {
@@ -33,37 +27,23 @@ public class DiceController {
 	public void setRandomNumber(RandomNumber rn) {
 		this.rn = rn;
 	}
-
-	public void handleRoll(ActionEvent event) {
-		default_lb.setVisible(false);
-
-		int n = 1;
-		try {
-			n = Integer.parseInt(num_tf.getText().trim());
-		} catch (Exception e) {
-			num_tf.setText(String.valueOf(n));
-		}
-
+	
+	public void handleRandom(ActionEvent event) {
 		File file;
 		Image image;
 		ImageView imageview;
-
+		
 		list_hb.getChildren().clear();
+		
+		file = new File("images/card/" + rn.getRandomed() + ".png");
+		image = new Image(file.toURI().toString());
+		imageview = new ImageView(image);
+		imageview.setFitHeight(250);
+		imageview.setFitWidth(200);
 
-		if (n > 0 && n < 4) {
-			for (int i = 0; i < n; i++) {
-
-				file = new File("images/dice/dice" + rn.getRandomed() + ".png");
-				image = new Image(file.toURI().toString());
-				imageview = new ImageView(image);
-				imageview.setFitHeight(150);
-				imageview.setFitWidth(150);
-
-				list_hb.getChildren().add(imageview);
-			}
-		}
+		list_hb.getChildren().add(imageview);
 	}
-
+	
 	public void handleBack(ActionEvent event) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("RandomizeUI.fxml"));
 		Scene scene = new Scene(root);
