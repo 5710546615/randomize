@@ -126,7 +126,7 @@ public class RandomizeController {
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
 			stage.sizeToScene();
-			stage.setTitle("YES or NO");
+			stage.setTitle("Coin");
 			stage.show();
 		} catch (Exception e) {
 			System.out.println("Exception creating scene: " + e.getMessage());
@@ -142,11 +142,61 @@ public class RandomizeController {
 	}
 
 	public void changeSceneToArrange(ActionEvent event) {
+		int min = 1;
+		int max = 1;
+		RandomNumber rn = new RandomNumber(min, max);
 
+		try {
+			URL url = getClass().getResource("ArrangeUI.fxml");
+			if (url == null) {
+				System.out.println("Couldn't find file: ArrangeUI.fxml");
+				Platform.exit();
+			}
+			FXMLLoader loader = new FXMLLoader(url);
+			Parent root = loader.load();
+
+			ArrangeController controller = loader.getController();
+			controller.setRandomNumber(rn);
+
+			Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+			Scene scene = new Scene(root);
+			stage.setScene(scene);
+			stage.sizeToScene();
+			stage.setTitle("Arrange");
+			stage.show();
+		} catch (Exception e) {
+			System.out.println("Exception creating scene: " + e.getMessage());
+		}
 	}
 
 	public void changeSceneToPickUp(ActionEvent event) {
+		int min = 0;
+		int max = 1;
+		RandomNumber rn = new RandomNumber(min, max);
 
+		try {
+			URL url = getClass().getResource("PickUpUI.fxml");
+			if (url == null) {
+				System.out.println("Couldn't find file: PickUpUI.fxml");
+				Platform.exit();
+			}
+			FXMLLoader loader = new FXMLLoader(url);
+			Parent root = loader.load();
+
+			PickUpController controller = loader.getController();
+			controller.setRandomNumber(rn);
+
+			Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+			Scene scene = new Scene(root);
+			stage.setScene(scene);
+			stage.sizeToScene();
+			stage.setTitle("Arrange");
+			stage.show();
+		} catch (Exception e) {
+			System.out.println("Exception creating scene: " + e.getMessage());
+		}
 	}
 
 }
