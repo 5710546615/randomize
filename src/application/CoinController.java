@@ -16,16 +16,16 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
-public class DiceController {
+public class CoinController {
 	@FXML
 	private TextField num_tf;
 	@FXML
 	private Label default_lb;
 	@FXML
 	private HBox list_hb;
-
+	
 	private RandomNumber rn;
-
+	
 	public RandomNumber getRandomNumber() {
 		return rn;
 	}
@@ -33,8 +33,8 @@ public class DiceController {
 	public void setRandomNumber(RandomNumber rn) {
 		this.rn = rn;
 	}
-
-	public void handleRoll(ActionEvent event) {
+	
+	public void handleFlip(ActionEvent event) {
 		default_lb.setVisible(false);
 
 		int n = 1;
@@ -52,8 +52,12 @@ public class DiceController {
 
 		if (n > 0 && n < 4) {
 			for (int i = 0; i < n; i++) {
-
-				file = new File("images/dices/dice" + rn.getRandomed() + ".png");
+				if (n == 1) {
+					file = new File("images/coin/" + rn.getRandomed() + ".png");
+				} else {
+					file = new File("images/coin/" + rn.getRandomed() + ".png");
+				}
+				
 				image = new Image(file.toURI().toString());
 				imageview = new ImageView(image);
 				imageview.setFitHeight(150);
@@ -63,7 +67,7 @@ public class DiceController {
 			}
 		}
 	}
-
+	
 	public void handleBack(ActionEvent event) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("RandomizeUI.fxml"));
 		Scene scene = new Scene(root);
