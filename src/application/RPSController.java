@@ -26,6 +26,11 @@ public class RPSController {
 
 	private RandomNumber rn;
 
+	private File file;
+	private Image image;
+	private ImageView imageview;
+	private int n;
+
 	public RandomNumber getRandomNumber() {
 		return rn;
 	}
@@ -34,10 +39,10 @@ public class RPSController {
 		this.rn = rn;
 	}
 
-	public void handlePlay(ActionEvent event) {
+	public void handleRandom(ActionEvent event) {
 		default_lb.setVisible(false);
 
-		int n = 1;
+		n = 1;
 
 		try {
 			n = Integer.parseInt(num_tf.getText().trim());
@@ -45,24 +50,35 @@ public class RPSController {
 			num_tf.setText(String.valueOf(n));
 		}
 
-		File file;
-		Image image;
-		ImageView imageview;
-
 		list_fp.getChildren().clear();
+		
+		if (imageview == null) {
+			if (n > 0 && n < 5) {
+				for (int i = 0; i < n; i++) {
+					file = new File("assets/rps/question.png");
+					image = new Image(file.toURI().toString());
+					imageview = new ImageView(image);
+					imageview.setFitHeight(125);
+					imageview.setFitHeight(125);
 
-		if (n > 0 && n < 5) {
-			for (int i = 0; i < n; i++) {
-				file = new File("assets/rps/" + rn.getRandomed() + ".png");
-				image = new Image(file.toURI().toString());
-				imageview = new ImageView(image);
-				imageview.setFitHeight(125);
-				imageview.setFitHeight(125);
+					list_fp.getChildren().add(imageview);
+				}
+			}
+		} else {
+			if (n > 0 && n < 5) {
+				for (int i = 0; i < n; i++) {
+					file = new File("assets/rps/" + rn.getRandomed() + ".png");
+					image = new Image(file.toURI().toString());
+					imageview = new ImageView(image);
+					imageview.setFitHeight(125);
+					imageview.setFitHeight(125);
 
-				list_fp.getChildren().add(imageview);
+					list_fp.getChildren().add(imageview);
+					
+					imageview = null;
+				}
 			}
 		}
-		
 	}
 
 	public void handleBack(ActionEvent event) throws IOException {

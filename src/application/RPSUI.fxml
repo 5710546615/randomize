@@ -11,7 +11,7 @@
       <Button mnemonicParsing="false" onAction="#handleBack" text="&lt; Back" />
       <Label alignment="CENTER" prefHeight="17.0" prefWidth="455.0" text="Rock-Paper-Scissors" />
       <Button mnemonicParsing="false" onAction="#handleRecent" text="Recent" />
-      <TextField fx:id="num_tf" alignment="CENTER" onAction="#handlePlay" promptText="No. of Player(s)">
+      <TextField fx:id="num_tf" alignment="CENTER" promptText="No. of Player(s)">
          <FlowPane.margin>
             <Insets left="210.0" />
          </FlowPane.margin>
@@ -21,14 +21,19 @@
             <Insets left="250.0" />
          </FlowPane.margin>
       </Label>
-      <FlowPane fx:id="list_fp" alignment="CENTER" prefHeight="275.0" prefWidth="338.0">
+      <FlowPane fx:id="list_fp" alignment="CENTER" prefHeight="170.0" prefWidth="578.0">
          <padding>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </padding>
          <FlowPane.margin>
-            <Insets left="125.0" />
+            <Insets top="20.0" />
          </FlowPane.margin>
       </FlowPane>
+      <Button mnemonicParsing="false" onAction="#handleRandom" text="Random">
+         <FlowPane.margin>
+            <Insets left="260.0" top="20.0" />
+         </FlowPane.margin>
+      </Button>
    </children>
    <padding>
       <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
