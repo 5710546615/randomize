@@ -17,15 +17,15 @@
       </FlowPane>
       <FlowPane alignment="CENTER" columnHalignment="CENTER" hgap="15.0" prefHeight="225.0" prefWidth="575.0" vgap="15.0">
          <children>
-         	<ToggleButton id="number" mnemonicParsing="false" onAction="#changeSceneToNumber" prefHeight="75.0" prefWidth="150.0" />
-         	<ToggleButton id="dice" mnemonicParsing="false" onAction="#changeSceneToDice" prefHeight="75.0" prefWidth="150.0" />
-         	<ToggleButton id="card" mnemonicParsing="false" onAction="#changeSceneToCard" prefHeight="75.0" prefWidth="150.0" />
-         	<ToggleButton id="yesno" mnemonicParsing="false" onAction="#changeSceneToYesOrNo" prefHeight="75.0" prefWidth="150.0" />
-         	<ToggleButton id="coin" mnemonicParsing="false" onAction="#changeSceneToCoin" prefHeight="75.0" prefWidth="150.0" />
-         	<ToggleButton id="rps" mnemonicParsing="false" onAction="#changeSceneToRPS" prefHeight="75.0" prefWidth="150.0" />
-         	<ToggleButton id="food" mnemonicParsing="false" onAction="#changeSceneToFood" prefHeight="75.0" prefWidth="150.0" />
-         	<ToggleButton id="arrange" mnemonicParsing="false" onAction="#changeSceneToArrange" prefHeight="75.0" prefWidth="150.0" />
-         	<ToggleButton id="pickup" mnemonicParsing="false" onAction="#changeSceneToPickUp" prefHeight="75.0" prefWidth="150.0" />
+         	<ToggleButton id="number_btn" mnemonicParsing="false" onAction="#changeSceneToNumber" prefHeight="75.0" prefWidth="150.0" />
+         	<ToggleButton id="dice_btn" mnemonicParsing="false" onAction="#changeSceneToDice" prefHeight="75.0" prefWidth="150.0" />
+         	<ToggleButton id="card_btn" mnemonicParsing="false" onAction="#changeSceneToCard" prefHeight="75.0" prefWidth="150.0" />
+         	<ToggleButton id="yesno_btn" mnemonicParsing="false" onAction="#changeSceneToYesOrNo" prefHeight="75.0" prefWidth="150.0" />
+         	<ToggleButton id="coin_btn" mnemonicParsing="false" onAction="#changeSceneToCoin" prefHeight="75.0" prefWidth="150.0" />
+         	<ToggleButton id="rps_btn" mnemonicParsing="false" onAction="#changeSceneToRPS" prefHeight="75.0" prefWidth="150.0" />
+         	<ToggleButton id="food_btn" mnemonicParsing="false" onAction="#changeSceneToFood" prefHeight="75.0" prefWidth="150.0" />
+         	<ToggleButton id="arrange_btn" mnemonicParsing="false" onAction="#changeSceneToArrange" prefHeight="75.0" prefWidth="150.0" />
+         	<ToggleButton id="pickup_btn" mnemonicParsing="false" onAction="#changeSceneToPickUp" prefHeight="75.0" prefWidth="150.0" />
             
          </children>
          <padding>

@@ -11,7 +11,7 @@
    <children>
       <Button mnemonicParsing="false" onAction="#handleBack" text="&lt; Back" />
       <Label alignment="CENTER" prefHeight="17.0" prefWidth="450.0" text="Dice Roller" />
-      <Button mnemonicParsing="false" onAction="#handleRecent" text="Recent" />
+      <Button mnemonicParsing="false" onAction="#handleClear" text="Recent" />
       <Label prefHeight="17.0" prefWidth="200.0" />
       <TextField fx:id="num_tf" alignment="CENTER" promptText="No. of Dice (Max : 3)" />
       <Label prefHeight="17.0" prefWidth="204.0" />

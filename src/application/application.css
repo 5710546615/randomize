@@ -6,56 +6,114 @@
     -fx-background-position: center center;
 }
 
-#number {
-  -fx-background-image: url('../../assets/etc/number.png');
+#number_btn {
+  -fx-background-image: url('../../assets/menu/number_btn.png');
   -fx-background-repeat: no-repeat;
   -fx-background-position: center;
+  -fx-border-radius: 10 10 10 10;
+  -fx-background-radius: 10 10 10 10;
 }
 
-#dice {
-  -fx-background-image: url('../../assets/etc/dice.png');
+#dice_btn {
+  -fx-background-image: url('../../assets/menu/dice_btn.png');
   -fx-background-repeat: no-repeat;
   -fx-background-position: center;
+  -fx-border-radius: 10 10 10 10;
+  -fx-background-radius: 10 10 10 10;
 }
 
-#card {
-  -fx-background-image: url('../../assets/etc/card.png');
+#card_btn {
+  -fx-background-image: url('../../assets/menu/card_btn.png');
   -fx-background-repeat: no-repeat;
   -fx-background-position: center;
+  -fx-border-radius: 10 10 10 10;
+  -fx-background-radius: 10 10 10 10;
 }
 
-#yesno {
-  -fx-background-image: url('../../assets/etc/yesno.png');
+#yesno_btn {
+  -fx-background-image: url('../../assets/menu/yesno_btn.png');
   -fx-background-repeat: no-repeat;
   -fx-background-position: center;
+  -fx-border-radius: 10 10 10 10;
+  -fx-background-radius: 10 10 10 10;
 }
 
-#coin {
-  -fx-background-image: url('../../assets/etc/coin.png');
+#coin_btn {
+  -fx-background-image: url('../../assets/menu/coin_btn.png');
   -fx-background-repeat: no-repeat;
   -fx-background-position: center;
+  -fx-border-radius: 10 10 10 10;
+  -fx-background-radius: 10 10 10 10;
 }
 
-#rps {
-  -fx-background-image: url('../../assets/etc/rps.png');
+#rps_btn {
+  -fx-background-image: url('../../assets/menu/rps_btn.png');
   -fx-background-repeat: no-repeat;
   -fx-background-position: center;
+  -fx-border-radius: 10 10 10 10;
+  -fx-background-radius: 10 10 10 10;
 }
 
-#food {
-  -fx-background-image: url('../../assets/etc/food.png');
+#food_btn {
+  -fx-background-image: url('../../assets/menu/food_btn.png');
   -fx-background-repeat: no-repeat;
   -fx-background-position: center;
+  -fx-border-radius: 10 10 10 10;
+  -fx-background-radius: 10 10 10 10;
 }
 
-#arrange {
-  -fx-background-image: url('../../assets/etc/arrange.png');
+#arrange_btn {
+  -fx-background-image: url('../../assets/menu/arrange_btn.png');
   -fx-background-repeat: no-repeat;
   -fx-background-position: center;
+  -fx-border-radius: 10 10 10 10;
+  -fx-background-radius: 10 10 10 10;
 }
 
-#pickup {
-  -fx-background-image: url('../../assets/etc/pickup.png');
+#pickup_btn {
+  -fx-background-image: url('../../assets/menu/pickup_btn.png');
   -fx-background-repeat: no-repeat;
   -fx-background-position: center;
+  -fx-border-radius: 10 10 10 10;
+  -fx-background-radius: 10 10 10 10;
+}
+
+#back_btn {
+  -fx-background-image: url('../../assets/etc/back.png');
+  -fx-background-repeat: no-repeat;
+  -fx-background-position: center;
+  -fx-border-radius: 10 10 10 10;
+  -fx-background-radius: 10 10 10 10;
+}
+
+#clear_btn {
+  -fx-background-image: url('../../assets/etc/clear.png');
+  -fx-background-repeat: no-repeat;
+  -fx-background-position: center;
+  -fx-border-radius: 10 10 10 10;
+  -fx-background-radius: 10 10 10 10;
+}
+
+#random_btn {
+  -fx-background-image: url('../../assets/etc/random.png');
+  -fx-background-repeat: no-repeat;
+  -fx-background-position: center;
+  -fx-border-radius: 10 10 10 10;
+  -fx-background-radius: 10 10 10 10;
+}
+
+#number_head {
+  -fx-background-image: url('../../assets/header/number.png');
+  -fx-background-repeat: no-repeat;
+  -fx-background-position: center;
+  -fx-border-radius: 10 10 10 10;
+  -fx-background-radius: 10 10 10 10;
+}
+
+.label {
+  -fx-background-color: rgb(252,252,252);
+  -fx-background-repeat: no-repeat;
+  -fx-background-position: center;
+  -fx-border-radius: 10 10 10 10;
+  -fx-background-radius: 10 10 10 10;
 }

@@ -55,4 +55,8 @@ public class FoodController extends Controller {
 
 		randomed_lb.setText(randomed);
 	}
+	
+	public void handleClear(ActionEvent event) {
+		
+	}
 }

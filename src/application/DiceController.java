@@ -47,4 +47,8 @@ public class DiceController extends Controller {
 			}
 		}
 	}
+	
+	public void handleClear(ActionEvent event) {
+		
+	}
 }

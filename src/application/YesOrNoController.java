@@ -34,4 +34,8 @@ public class YesOrNoController extends Controller {
 
 		list_hb.getChildren().add(imageview);
 	}
+	
+	public void handleClear(ActionEvent event) {
+		
+	}
 }

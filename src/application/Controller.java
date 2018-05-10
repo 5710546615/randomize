@@ -29,10 +29,4 @@ public class Controller {
 		stage.setScene(scene);
 		stage.show();
 	}
-
-	public void handleRecent(ActionEvent event) throws IOException {
-		RecentView view = new RecentView(rn);
-		rn.addObserver(view);
-		view.run();
-	}
 }

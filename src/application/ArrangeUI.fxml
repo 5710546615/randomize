@@ -10,7 +10,7 @@
    <children>
       <Button mnemonicParsing="false" onAction="#handleBack" text="&lt; Back" />
       <Label alignment="CENTER" prefHeight="17.0" prefWidth="443.0" text="Arrange" />
-      <Button mnemonicParsing="false" onAction="#handleRecent" text="Recent" />
+      <Button mnemonicParsing="false" onAction="#handleClear" text="Recent" />
       <TextArea fx:id="input_ta" prefHeight="200.0" prefWidth="504.0" wrapText="true">
          <FlowPane.margin>
             <Insets bottom="25.0" left="35.0" top="25.0" />

@@ -13,7 +13,7 @@
    <children>
       <Button mnemonicParsing="false" onAction="#handleBack" text="&lt; Back" />
       <Label alignment="CENTER" prefHeight="17.0" prefWidth="455.0" text="YES or NO" />
-      <Button mnemonicParsing="false" onAction="#handleRecent" text="Recent" />
+      <Button mnemonicParsing="false" onAction="#handleClear" text="Recent" />
       <Label prefHeight="14.0" prefWidth="575.0" />
       <HBox fx:id="list_hb" alignment="CENTER" prefHeight="182.0" prefWidth="576.0" />
       <Label prefHeight="14.0" prefWidth="575.0" />

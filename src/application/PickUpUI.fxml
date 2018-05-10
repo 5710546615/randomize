@@ -12,7 +12,7 @@
    <children>
       <Button mnemonicParsing="false" onAction="#handleBack" text="&lt; Back" />
       <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="453.0" text="Pick Up" />
-      <Button mnemonicParsing="false" onAction="#handleRecent" text="Recent" />
+      <Button mnemonicParsing="false" onAction="#handleClear" text="Recent" />
       <RadioButton fx:id="norepeat_rb" mnemonicParsing="false" text="No Repeat">
          <FlowPane.margin>
             <Insets left="250.0" />

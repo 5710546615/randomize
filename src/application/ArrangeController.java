@@ -21,4 +21,8 @@ public class ArrangeController extends Controller {
 
 		input_ta.setText(list.toString().replace("[", "").replaceAll("]", ""));
 	}
+	
+	public void handleClear(ActionEvent event) {
+		
+	}
 }

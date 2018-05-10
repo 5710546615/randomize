@@ -51,4 +51,8 @@ public class CoinController extends Controller {
 			}
 		}
 	}
+	
+	public void handleClear(ActionEvent event) {
+		
+	}
 }

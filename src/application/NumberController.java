@@ -1,5 +1,6 @@
 package application;
 
+import java.io.File;
 import java.util.ArrayList;
 
 import javafx.event.ActionEvent;
@@ -7,6 +8,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class NumberController extends Controller {
 	@FXML
@@ -19,6 +22,17 @@ public class NumberController extends Controller {
 	private RadioButton norepeat_rb;
 	@FXML
 	private Label default_lb;
+	
+	File file;
+	Image image;
+	@FXML
+	ImageView header_iv;
+	
+	public void initialize() {
+		file = new File("assets/header/number.png");
+		image = new Image(file.toURI().toString());
+		header_iv.setImage(image);
+	}
 
 	public void handleRandom(ActionEvent event) {
 		default_lb.setVisible(false);
@@ -51,6 +65,17 @@ public class NumberController extends Controller {
 		if (randomed == Integer.MIN_VALUE) {
 			randomed_lb.setText("?");
 		}
-
+	}
+	
+	public void handleClear(ActionEvent event) {
+		min_tf.clear();
+		max_tf.clear();
+		randomed_lb.setText("?");
+		norepeat_rb.setSelected(false);
+		default_lb.setVisible(true);
+		
+		rn.setRands(null);
+		rn.setMin(0);
+		rn.setMax(99);
 	}
 }

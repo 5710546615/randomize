@@ -64,4 +64,8 @@ public class RPSController extends Controller {
 			}
 		}
 	}
+	
+	public void handleClear(ActionEvent event) {
+		
+	}
 }
