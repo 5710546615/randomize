@@ -24,6 +24,7 @@ public class Controller {
 	public void handleBack(ActionEvent event) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("RandomizeUI.fxml"));
 		Scene scene = new Scene(root);
+		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		stage.setScene(scene);
 		stage.show();

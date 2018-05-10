@@ -1,0 +1,61 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+.root {
+	-fx-background-image: url("../../assets/etc/background.png");
+   	-fx-background-repeat: stretch;   
+   	-fx-background-size: 600.0 400.0;
+    -fx-background-position: center center;
+}
+
+#number {
+  -fx-background-image: url('../../assets/etc/number.png');
+  -fx-background-repeat: no-repeat;
+  -fx-background-position: center;
+}
+
+#dice {
+  -fx-background-image: url('../../assets/etc/dice.png');
+  -fx-background-repeat: no-repeat;
+  -fx-background-position: center;
+}
+
+#card {
+  -fx-background-image: url('../../assets/etc/card.png');
+  -fx-background-repeat: no-repeat;
+  -fx-background-position: center;
+}
+
+#yesno {
+  -fx-background-image: url('../../assets/etc/yesno.png');
+  -fx-background-repeat: no-repeat;
+  -fx-background-position: center;
+}
+
+#coin {
+  -fx-background-image: url('../../assets/etc/coin.png');
+  -fx-background-repeat: no-repeat;
+  -fx-background-position: center;
+}
+
+#rps {
+  -fx-background-image: url('../../assets/etc/rps.png');
+  -fx-background-repeat: no-repeat;
+  -fx-background-position: center;
+}
+
+#food {
+  -fx-background-image: url('../../assets/etc/food.png');
+  -fx-background-repeat: no-repeat;
+  -fx-background-position: center;
+}
+
+#arrange {
+  -fx-background-image: url('../../assets/etc/arrange.png');
+  -fx-background-repeat: no-repeat;
+  -fx-background-position: center;
+}
+
+#pickup {
+  -fx-background-image: url('../../assets/etc/pickup.png');
+  -fx-background-repeat: no-repeat;
+  -fx-background-position: center;
+}

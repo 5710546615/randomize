@@ -1,17 +1,33 @@
 package application;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 public class RandomizeController {
+	@FXML
+	private ImageView logo_iv;
+	
+	File file;
+	Image image;
+	ImageView imageview;
+	
+	public void initialize() {
+		file = new File("assets/etc/randomize.png");
+		image = new Image(file.toURI().toString());
+		logo_iv.setImage(image);
+	}
 
 	public void changeScene(ActionEvent event, String fxml, String title, Controller controller, int max) {
 		try {
@@ -30,6 +46,7 @@ public class RandomizeController {
 			Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
 			Scene scene = new Scene(root);
+			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			stage.setScene(scene);
 			stage.sizeToScene();
 			stage.setTitle("Random Number");
