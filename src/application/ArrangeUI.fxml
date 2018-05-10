@@ -16,7 +16,7 @@
             <Insets bottom="25.0" left="35.0" top="25.0" />
          </FlowPane.margin>
       </TextArea>
-      <Button mnemonicParsing="false" onAction="#handleArrange" text="Arrange">
+      <Button mnemonicParsing="false" onAction="#handleRandom" text="Arrange">
          <FlowPane.margin>
             <Insets left="270.0" />
          </FlowPane.margin>

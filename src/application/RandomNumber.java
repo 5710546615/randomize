@@ -30,7 +30,7 @@ public class RandomNumber extends Observable {
 		Random rand = new Random();
 		int range = max - min + 1;
 		randomed = rand.nextInt(range) + min;
-		
+
 		if (rands != null) {
 			if (!rands.contains(randomed)) {
 				rands.add(randomed);
@@ -44,10 +44,10 @@ public class RandomNumber extends Observable {
 				randomed = Integer.MIN_VALUE;
 			}
 		}
-		
+
 		if (randomed != Integer.MIN_VALUE)
 			allNumbers.add(randomed);
-		
+
 		setChanged();
 		notifyObservers();
 		return randomed;
@@ -56,8 +56,8 @@ public class RandomNumber extends Observable {
 	public List<Integer> getRands() {
 		return rands;
 	}
-	
-	public List<Integer> getAllNumbers(){
+
+	public List<Integer> getAllNumbers() {
 		return allNumbers;
 	}
 
@@ -72,7 +72,7 @@ public class RandomNumber extends Observable {
 	public void setRands(List<Integer> rands) {
 		this.rands = rands;
 	}
-	
+
 	public void clearAll() {
 		allNumbers = new ArrayList<Integer>();
 		rands = null;

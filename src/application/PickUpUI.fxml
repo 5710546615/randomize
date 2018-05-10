@@ -13,7 +13,7 @@
       <Button mnemonicParsing="false" onAction="#handleBack" text="&lt; Back" />
       <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="453.0" text="Pick Up" />
       <Button mnemonicParsing="false" onAction="#handleRecent" text="Recent" />
-      <RadioButton fx:id="norepeat_rb" mnemonicParsing="false" onAction="#handleNoRepeat" text="No Repeat">
+      <RadioButton fx:id="norepeat_rb" mnemonicParsing="false" text="No Repeat">
          <FlowPane.margin>
             <Insets left="250.0" />
          </FlowPane.margin>
@@ -31,7 +31,7 @@
             <Font size="25.0" />
          </font>
       </Label>
-      <Button mnemonicParsing="false" onAction="#handlePick" text="Pick">
+      <Button mnemonicParsing="false" onAction="#handleRandom" text="Pick">
          <FlowPane.margin>
             <Insets left="275.0" />
          </FlowPane.margin>

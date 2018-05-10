@@ -18,6 +18,6 @@
       <HBox fx:id="list_hb" alignment="CENTER" prefHeight="182.0" prefWidth="576.0" />
       <Label prefHeight="14.0" prefWidth="575.0" />
       <Label prefHeight="17.0" prefWidth="258.0" />
-      <Button mnemonicParsing="false" onAction="#handleTry" text="Try" />
+      <Button mnemonicParsing="false" onAction="#handleRandom" text="Try" />
    </children>
 </FlowPane>

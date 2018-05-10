@@ -22,7 +22,7 @@
       <Label fx:id="default_lb" alignment="CENTER" prefWidth="100.0" text="(Default 0-&gt;99)" />
       <Label prefHeight="17.0" prefWidth="233.0" />
       <Label prefHeight="17.0" prefWidth="223.0" />
-      <RadioButton fx:id="norepeat_rb" mnemonicParsing="false" onAction="#handleNoRepeat" text="No Repeat" />
+      <RadioButton fx:id="norepeat_rb" mnemonicParsing="false" text="No Repeat" />
       <Label prefWidth="140.0" />
       <Label prefHeight="17.0" prefWidth="195.0" />
       <Label fx:id="randomed_lb" alignment="CENTER" prefHeight="150.0" prefWidth="150.0" text="?">
