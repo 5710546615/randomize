@@ -35,7 +35,7 @@ public class CardController {
 		
 		list_hb.getChildren().clear();
 		
-		file = new File("images/card/" + rn.getRandomed() + ".png");
+		file = new File("assets/card/" + rn.getRandomed() + ".png");
 		image = new Image(file.toURI().toString());
 		imageview = new ImageView(image);
 		imageview.setFitHeight(250);

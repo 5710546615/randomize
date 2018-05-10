@@ -25,7 +25,7 @@ public class YesOrNoController {
 	private ImageView imageview;
 	
 	public void initialize() {
-		file = new File("images/yesno/yesno.png");
+		file = new File("assets/yesno/yesno.png");
 		image = new Image(file.toURI().toString());
 		imageview = new ImageView(image);
 		
@@ -44,9 +44,9 @@ public class YesOrNoController {
 		list_hb.getChildren().clear();
 		
 		if (rn.getRandomed() == 1) {
-			file = new File("images/yesno/yes.png");
+			file = new File("assets/yesno/yes.png");
 		} else {
-			file = new File("images/yesno/no.png");
+			file = new File("assets/yesno/no.png");
 		}
 		
 		image = new Image(file.toURI().toString());

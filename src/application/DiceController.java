@@ -53,7 +53,7 @@ public class DiceController {
 		if (n > 0 && n < 4) {
 			for (int i = 0; i < n; i++) {
 
-				file = new File("images/dice/dice" + rn.getRandomed() + ".png");
+				file = new File("assets/dice/dice" + rn.getRandomed() + ".png");
 				image = new Image(file.toURI().toString());
 				imageview = new ImageView(image);
 				imageview.setFitHeight(150);

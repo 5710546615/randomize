@@ -188,7 +188,32 @@ public class RandomizeController {
 	}
 
 	public void changeSceneToFood(ActionEvent event) {
+		int min = 0;
+		int max = 0;
+		RandomNumber rn = new RandomNumber(min, max);
 
+		try {
+			URL url = getClass().getResource("FoodUI.fxml");
+			if (url == null) {
+				System.out.println("Couldn't find file: FoodUI.fxml");
+				Platform.exit();
+			}
+			FXMLLoader loader = new FXMLLoader(url);
+			Parent root = loader.load();
+
+			FoodController controller = loader.getController();
+			controller.setRandomNumber(rn);
+
+			Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+			Scene scene = new Scene(root);
+			stage.setScene(scene);
+			stage.sizeToScene();
+			stage.setTitle("Food");
+			stage.show();
+		} catch (Exception e) {
+			System.out.println("Exception creating scene: " + e.getMessage());
+		}
 	}
 
 	public void changeSceneToArrange(ActionEvent event) {

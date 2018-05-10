@@ -53,9 +53,9 @@ public class CoinController {
 		if (n > 0 && n < 4) {
 			for (int i = 0; i < n; i++) {
 				if (n == 1) {
-					file = new File("images/coin/" + rn.getRandomed() + ".png");
+					file = new File("assets/coin/" + rn.getRandomed() + ".png");
 				} else {
-					file = new File("images/coin/" + rn.getRandomed() + ".png");
+					file = new File("assets/coin/" + rn.getRandomed() + ".png");
 				}
 				
 				image = new Image(file.toURI().toString());

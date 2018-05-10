@@ -53,7 +53,7 @@ public class RPSController {
 
 		if (n > 0 && n < 5) {
 			for (int i = 0; i < n; i++) {
-				file = new File("images/rps/" + rn.getRandomed() + ".png");
+				file = new File("assets/rps/" + rn.getRandomed() + ".png");
 				image = new Image(file.toURI().toString());
 				imageview = new ImageView(image);
 				imageview.setFitHeight(125);
