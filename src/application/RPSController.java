@@ -10,6 +10,11 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
 
+/**
+ * RPSController represents UI controller in RPS (Rock-Paper-Scissors) scene.
+ * 
+ * @author Visurt Anuttivong
+ */
 public class RPSController extends Controller {
 	@FXML
 	private ImageView header_iv;
@@ -20,16 +25,27 @@ public class RPSController extends Controller {
 	@FXML
 	private FlowPane list_fp;
 
+	/** the source file */
 	private File file;
+	/** the image from file */
 	private Image image;
+	/** image view component */
 	private ImageView imageview;
 
+	/**
+	 * Initialize a new RPSController when creates the UI form.
+	 */
 	public void initialize() {
 		file = new File("assets/header/rps.png");
 		image = new Image(file.toURI().toString());
 		header_iv.setImage(image);
 	}
 
+	/**
+	 * Random handler is to random either rock, paper or scissors.
+	 * 
+	 * @param event the event when select
+	 */
 	public void handleRandom(ActionEvent event) {
 		default_lb.setVisible(false);
 		int n = 1;
@@ -66,6 +82,11 @@ public class RPSController extends Controller {
 		}
 	}
 
+	/**
+	 * Clear handler is to clear all components to default.
+	 * 
+	 * @param event the event when select
+	 */
 	public void handleClear(ActionEvent event) {
 		default_lb.setVisible(true);
 		num_tf.clear();

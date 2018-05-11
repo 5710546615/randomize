@@ -11,6 +11,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+/**
+ * NumberController represents UI controller in Number scene.
+ * 
+ * @author Visurt Anuttivong
+ */
 public class NumberController extends Controller {
 	@FXML
 	private ImageView header_iv;
@@ -25,15 +30,25 @@ public class NumberController extends Controller {
 	@FXML
 	private Label default_lb;
 
+	/** the source file */
 	private File file;
+	/** the image from file */
 	private Image image;
 
+	/**
+	 * Initialize a new NumberController when creates the UI form.
+	 */
 	public void initialize() {
 		file = new File("assets/header/number.png");
 		image = new Image(file.toURI().toString());
 		header_iv.setImage(image);
 	}
 
+	/**
+	 * Random handler is to random number between min and max from input field.
+	 * 
+	 * @param event the event when select
+	 */
 	public void handleRandom(ActionEvent event) {
 		default_lb.setVisible(false);
 
@@ -64,6 +79,11 @@ public class NumberController extends Controller {
 		}
 	}
 
+	/**
+	 * Clear handler is to clear all components to default.
+	 * 
+	 * @param event the event when select
+	 */
 	public void handleClear(ActionEvent event) {
 		min_tf.clear();
 		max_tf.clear();

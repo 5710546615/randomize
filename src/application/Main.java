@@ -6,8 +6,17 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.fxml.FXMLLoader;
 
+/**
+ * A main class for the Randomize. It is responsible for loading FXML and
+ * showing it.
+ * 
+ * @author Visurt Anuttivong
+ */
 public class Main extends Application {
-	@Override
+
+	/**
+	 * Loading main scene FXML and showing it.
+	 */
 	public void start(Stage stage) {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("RandomizeUI.fxml"));
@@ -23,6 +32,11 @@ public class Main extends Application {
 		}
 	}
 
+	/**
+	 * Launch the application.
+	 * 
+	 * @param args not use.
+	 */
 	public static void main(String[] args) {
 		launch(args);
 	}

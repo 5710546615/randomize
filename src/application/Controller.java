@@ -9,20 +9,47 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * UI Controller for events and initializing components.
+ * 
+ * @author Visurt Anuttivong
+ */
+
 public class Controller {
 
+	/** the random system */
 	protected RandomNumber rn;
 
+	/**
+	 * Get the random system
+	 * 
+	 * @return RandomNumber
+	 */
 	public RandomNumber getRandomNumber() {
 		return rn;
 	}
 
+	/**
+	 * Set the random system
+	 * 
+	 * @param rn the RandomNumber
+	 */
 	public void setRandomNumber(RandomNumber rn) {
 		this.rn = rn;
 	}
 
-	public void handleBack(ActionEvent event) throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("RandomizeUI.fxml"));
+	/**
+	 * Back handler is to return to the main scene.
+	 * 
+	 * @param event the event when select
+	 */
+	public void handleBack(ActionEvent event) {
+		Parent root = null;
+		try {
+			root = FXMLLoader.load(getClass().getResource("RandomizeUI.fxml"));
+		} catch (IOException e) {
+
+		}
 		Scene scene = new Scene(root);
 		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
