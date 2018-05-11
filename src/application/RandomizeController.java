@@ -19,9 +19,8 @@ public class RandomizeController {
 	@FXML
 	private ImageView logo_iv;
 	
-	File file;
-	Image image;
-	ImageView imageview;
+	private File file;
+	private Image image;
 	
 	public void initialize() {
 		file = new File("assets/etc/randomize.png");

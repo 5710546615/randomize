@@ -12,15 +12,18 @@ import javafx.scene.layout.HBox;
 
 public class CardController extends Controller {
 	@FXML
-	private HBox list_hb;
-
-	File file;
-	Image image;
+	private ImageView header_iv;
 	@FXML
-	ImageView header_iv;
-
+	private HBox list_hb;
 	@FXML
 	private Label numcard;
+	
+	
+	private File file;
+	private Image image;
+
+
+
 
 	public void initialize() {
 		file = new File("assets/header/card.png");

@@ -14,12 +14,13 @@ import javafx.scene.image.ImageView;
 
 public class ArrangeController extends Controller {
 	@FXML
-	private TextArea input_ta;
-	
-	File file;
-	Image image;
+	private ImageView header_iv;
 	@FXML
-	ImageView header_iv;
+	private TextArea input_ta;
+
+	
+	private File file;
+	private Image image;
 
 	public void initialize() {
 		file = new File("assets/header/arrange.png");

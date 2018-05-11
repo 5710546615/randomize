@@ -41,7 +41,7 @@
 		<FlowPane alignment="CENTER" prefHeight="44.0" prefWidth="550.0">
 			<children>
 				<ToggleButton id="random_btn" mnemonicParsing="false"
-					onAction="#handleRandom" prefHeight="44.0" prefWidth="150.0" />
+					onAction="#handleRandom" prefHeight="44.0" prefWidth="180.0" />
 			</children>
 		</FlowPane>
 	</children>

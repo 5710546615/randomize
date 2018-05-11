@@ -23,8 +23,8 @@ public class NumberController extends Controller {
 	@FXML
 	private Label default_lb;
 	
-	File file;
-	Image image;
+	private File file;
+	private Image image;
 	@FXML
 	ImageView header_iv;
 	

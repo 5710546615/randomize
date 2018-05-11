@@ -15,15 +15,16 @@ import javafx.scene.image.ImageView;
 
 public class PickUpController extends Controller {
 	@FXML
+	private ImageView header_iv;
+	@FXML
 	private TextArea input_ta;
 	@FXML
 	private RadioButton norepeat_rb;
 	@FXML
 	private Label randomed_lb;
-	File file;
-	Image image;
-	@FXML
-	ImageView header_iv;
+	private File file;
+	private Image image;
+
 
 	public void initialize() {
 		file = new File("assets/header/pickup.png");

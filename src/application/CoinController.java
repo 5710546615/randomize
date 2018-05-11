@@ -12,16 +12,17 @@ import javafx.scene.layout.HBox;
 
 public class CoinController extends Controller {
 	@FXML
+	private ImageView header_iv;
+	@FXML
 	private TextField num_tf;
 	@FXML
 	private Label default_lb;
 	@FXML
 	private HBox list_hb;
 
-	File file;
-	Image image;
-	@FXML
-	ImageView header_iv;
+	
+	private File file;
+	private Image image;
 
 	public void initialize() {
 		file = new File("assets/header/coin.png");

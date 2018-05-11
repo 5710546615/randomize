@@ -15,16 +15,17 @@ import javafx.scene.image.ImageView;
 
 public class FoodController extends Controller {
 	@FXML
+	private ImageView header_iv;
+	@FXML
 	private Label randomed_lb;
 
 	private static final String TYPE = "assets/food/type.txt";
 	private static final String SAUCE = "assets/food/sauce.txt";
 	private static final String MATERIAL = "assets/food/material.txt";
 
-	File file;
-	Image image;
-	@FXML
-	ImageView header_iv;
+	private File file;
+	private Image image;
+
 
 	public void initialize() {
 		file = new File("assets/header/food.png");
