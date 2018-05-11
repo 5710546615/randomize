@@ -1,6 +1,5 @@
 package application;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
@@ -24,8 +23,6 @@ public class RandomizeController {
 	@FXML
 	private ImageView logo_iv;
 
-	/** the source file */
-	private File file;
 	/** the image from file */
 	private Image image;
 
@@ -33,8 +30,7 @@ public class RandomizeController {
 	 * Initialize a new RandomizeController when creates the UI form.
 	 */
 	public void initialize() {
-		file = new File("assets/etc/randomize.png");
-		image = new Image(file.toURI().toString());
+		image = new Image(ResourceLoader.load("etc/randomize.png"));
 		logo_iv.setImage(image);
 	}
 

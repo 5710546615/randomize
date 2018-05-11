@@ -1,11 +1,10 @@
 package application;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -24,16 +23,14 @@ public class FoodController extends Controller {
 	@FXML
 	private Label randomed_lb;
 
-	/** the source file */
-	private File file;
 	/** the image from file */
 	private Image image;
 	/** source file of types of food */
-	private static final String TYPE = "assets/food/type.txt";
+	private static final String TYPE = "food/type.txt";
 	/** source file of sauces of food */
-	private static final String SAUCE = "assets/food/sauce.txt";
+	private static final String SAUCE = "food/sauce.txt";
 	/** source file of materials of food */
-	private static final String MATERIAL = "assets/food/material.txt";
+	private static final String MATERIAL = "food/material.txt";
 	/** List of each random */
 	private List<String> types, sauces, materials;
 	/** List of all list of each random */
@@ -43,8 +40,7 @@ public class FoodController extends Controller {
 	 * Initialize a new FoodController when creates the UI form.
 	 */
 	public void initialize() {
-		file = new File("assets/header/food.png");
-		image = new Image(file.toURI().toString());
+		image = new Image(ResourceLoader.load("header/food.png"));
 		header_iv.setImage(image);
 
 		types = reader(TYPE);
@@ -67,7 +63,7 @@ public class FoodController extends Controller {
 
 		for (int i = 0; i < list.size(); i++) {
 			rn.setMax(list.get(i).size() - 1);
-			randomed += "" + list.get(i).get(rn.getRandomed());
+			randomed += "" + list.get(i).get(rn.getRandomed()).trim();
 		}
 
 		randomed_lb.setText(randomed);
@@ -86,20 +82,14 @@ public class FoodController extends Controller {
 	 * Read string from source file and write to list.
 	 * 
 	 * @param str the source file in form of String
-	 * @return list of all things that read from file
+	 * @return list that contains string from read file
 	 */
 	public List<String> reader(String str) {
-		List<String> tmp = new ArrayList<String>();
-		String line;
-		try {
-			BufferedReader br = new BufferedReader(new FileReader(str));
-			while ((line = br.readLine()) != null) {
-				tmp.add(line);
-			}
-			br.close();
-		} catch (IOException e) {
+		@SuppressWarnings("resource")
+		Scanner scan = new Scanner(ResourceLoader.load(str)).useDelimiter("\\A");
+		String s = scan.hasNext() ? scan.next() : "";
 
-		}
-		return tmp;
+		List<String> list = new ArrayList<String>(Arrays.asList(s.trim().split("\n")));
+		return list;
 	}
 }

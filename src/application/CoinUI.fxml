@@ -26,7 +26,7 @@
 			<children>
 				<HBox alignment="CENTER">
 					<children>
-						<TextField fx:id="num_tf" alignment="CENTER" prefHeight="40.0" prefWidth="175.0" promptText="No. of Coin (Max : 4)">
+						<TextField fx:id="num_tf" alignment="CENTER" onAction="#handleRandom" prefHeight="40.0" prefWidth="175.0" promptText="No. of Coin (Max : 4)">
 							<font>
 								<Font size="16.0" />
 							</font>

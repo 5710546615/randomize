@@ -1,7 +1,5 @@
 package application;
 
-import java.io.File;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -25,8 +23,6 @@ public class RPSController extends Controller {
 	@FXML
 	private FlowPane list_fp;
 
-	/** the source file */
-	private File file;
 	/** the image from file */
 	private Image image;
 	/** image view component */
@@ -36,8 +32,7 @@ public class RPSController extends Controller {
 	 * Initialize a new RPSController when creates the UI form.
 	 */
 	public void initialize() {
-		file = new File("assets/header/rps.png");
-		image = new Image(file.toURI().toString());
+		image = new Image(ResourceLoader.load("header/rps.png"));
 		header_iv.setImage(image);
 	}
 
@@ -60,8 +55,7 @@ public class RPSController extends Controller {
 
 		if (imageview == null && n > 0 && n < 5) {
 			for (int i = 0; i < n; i++) {
-				file = new File("assets/rps/question.png");
-				image = new Image(file.toURI().toString());
+				image = new Image(ResourceLoader.load("rps/question.png"));
 				imageview = new ImageView(image);
 				imageview.setFitHeight(125);
 				imageview.setFitHeight(125);
@@ -70,8 +64,7 @@ public class RPSController extends Controller {
 			}
 		} else if (n > 0 && n < 5) {
 			for (int i = 0; i < n; i++) {
-				file = new File("assets/rps/" + rn.getRandomed() + ".png");
-				image = new Image(file.toURI().toString());
+				image = new Image(ResourceLoader.load("rps/" + rn.getRandomed() + ".png"));
 				imageview = new ImageView(image);
 				imageview.setFitHeight(125);
 				imageview.setFitHeight(125);

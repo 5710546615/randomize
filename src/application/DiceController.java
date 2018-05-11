@@ -1,7 +1,5 @@
 package application;
 
-import java.io.File;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -25,8 +23,6 @@ public class DiceController extends Controller {
 	@FXML
 	private HBox list_hb;
 
-	/** the source file */
-	private File file;
 	/** the image from file */
 	private Image image;
 	/** image view component */
@@ -36,8 +32,7 @@ public class DiceController extends Controller {
 	 * Initialize a new DiceController when creates the UI form.
 	 */
 	public void initialize() {
-		file = new File("assets/header/dice.png");
-		image = new Image(file.toURI().toString());
+		image = new Image(ResourceLoader.load("header/dice.png"));
 		header_iv.setImage(image);
 	}
 
@@ -63,8 +58,7 @@ public class DiceController extends Controller {
 		list_hb.getChildren().clear();
 
 		for (int i = 0; i < n; i++) {
-			file = new File("assets/dice/" + rn.getRandomed() + ".png");
-			image = new Image(file.toURI().toString());
+			image = new Image(ResourceLoader.load("dice/" + rn.getRandomed() + ".png"));
 			imageview = new ImageView(image);
 			imageview.setFitHeight(125);
 			imageview.setFitWidth(125);

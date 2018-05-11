@@ -1,6 +1,5 @@
 package application;
 
-import java.io.File;
 import java.util.ArrayList;
 
 import javafx.event.ActionEvent;
@@ -23,8 +22,6 @@ public class CardController extends Controller {
 	@FXML
 	private Label numcard;
 
-	/** the source file */
-	private File file;
 	/** the image from file */
 	private Image image;
 	/** image view component */
@@ -34,8 +31,7 @@ public class CardController extends Controller {
 	 * Initialize a new CardController when creates the UI form.
 	 */
 	public void initialize() {
-		file = new File("assets/header/card.png");
-		image = new Image(file.toURI().toString());
+		image = new Image(ResourceLoader.load("header/card.png"));
 		header_iv.setImage(image);
 	}
 
@@ -51,8 +47,7 @@ public class CardController extends Controller {
 
 		list_hb.getChildren().clear();
 
-		file = new File("assets/card/" + rn.getRandomed() + ".png");
-		image = new Image(file.toURI().toString());
+		image = new Image(ResourceLoader.load("card/" + rn.getRandomed() + ".png"));
 		imageview = new ImageView(image);
 		imageview.setFitHeight(175);
 		imageview.setFitWidth(115);

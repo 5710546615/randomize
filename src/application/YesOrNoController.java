@@ -1,7 +1,5 @@
 package application;
 
-import java.io.File;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
@@ -19,8 +17,6 @@ public class YesOrNoController extends Controller {
 	@FXML
 	private HBox list_hb;
 
-	/** the source file */
-	private File file;
 	/** the image from file */
 	private Image image;
 	/** image view component */
@@ -30,12 +26,10 @@ public class YesOrNoController extends Controller {
 	 * Initialize a new YesOrNoController when creates the UI form.
 	 */
 	public void initialize() {
-		file = new File("assets/header/yesno.png");
-		image = new Image(file.toURI().toString());
+		image = new Image(ResourceLoader.load("header/yesno.png"));
 		header_iv.setImage(image);
 
-		file = new File("assets/yesno/yesno.png");
-		image = new Image(file.toURI().toString());
+		image = new Image(ResourceLoader.load("yesno/yesno.png"));
 		imageview = new ImageView(image);
 		imageview.setFitHeight(212);
 		imageview.setFitWidth(450);
@@ -51,8 +45,7 @@ public class YesOrNoController extends Controller {
 	public void handleRandom(ActionEvent event) {
 		list_hb.getChildren().clear();
 
-		file = new File("assets/yesno/" + rn.getRandomed() + ".png");
-		image = new Image(file.toURI().toString());
+		image = new Image(ResourceLoader.load("yesno/" + rn.getRandomed() + ".png"));
 		imageview = new ImageView(image);
 		imageview.setFitHeight(212);
 		imageview.setFitWidth(450);
@@ -68,8 +61,7 @@ public class YesOrNoController extends Controller {
 	public void handleClear(ActionEvent event) {
 		list_hb.getChildren().clear();
 
-		file = new File("assets/yesno/yesno.png");
-		image = new Image(file.toURI().toString());
+		image = new Image(ResourceLoader.load("yesno/yesno.png"));
 		imageview = new ImageView(image);
 		imageview.setFitHeight(212);
 		imageview.setFitWidth(450);

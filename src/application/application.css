@@ -1,13 +1,13 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
 .root {
-	-fx-background-image: url("../../assets/etc/background.png");
+	-fx-background-image: url("../etc/background.png");
    	-fx-background-repeat: stretch;   
    	-fx-background-size: 600.0 400.0;
     -fx-background-position: center center;
 }
 
 #number_btn {
-  -fx-background-image: url('../../assets/menu/number_btn.png');
+  -fx-background-image: url('../menu/number_btn.png');
   -fx-background-repeat: no-repeat;
   -fx-background-position: center;
   -fx-border-radius: 10 10 10 10;
@@ -15,7 +15,7 @@
 }
 
 #dice_btn {
-  -fx-background-image: url('../../assets/menu/dice_btn.png');
+  -fx-background-image: url('../menu/dice_btn.png');
   -fx-background-repeat: no-repeat;
   -fx-background-position: center;
   -fx-border-radius: 10 10 10 10;
@@ -23,7 +23,7 @@
 }
 
 #card_btn {
-  -fx-background-image: url('../../assets/menu/card_btn.png');
+  -fx-background-image: url('../menu/card_btn.png');
   -fx-background-repeat: no-repeat;
   -fx-background-position: center;
   -fx-border-radius: 10 10 10 10;
@@ -31,7 +31,7 @@
 }
 
 #yesno_btn {
-  -fx-background-image: url('../../assets/menu/yesno_btn.png');
+  -fx-background-image: url('../menu/yesno_btn.png');
   -fx-background-repeat: no-repeat;
   -fx-background-position: center;
   -fx-border-radius: 10 10 10 10;
@@ -39,7 +39,7 @@
 }
 
 #coin_btn {
-  -fx-background-image: url('../../assets/menu/coin_btn.png');
+  -fx-background-image: url('../menu/coin_btn.png');
   -fx-background-repeat: no-repeat;
   -fx-background-position: center;
   -fx-border-radius: 10 10 10 10;
@@ -47,7 +47,7 @@
 }
 
 #rps_btn {
-  -fx-background-image: url('../../assets/menu/rps_btn.png');
+  -fx-background-image: url('../menu/rps_btn.png');
   -fx-background-repeat: no-repeat;
   -fx-background-position: center;
   -fx-border-radius: 10 10 10 10;
@@ -55,7 +55,7 @@
 }
 
 #food_btn {
-  -fx-background-image: url('../../assets/menu/food_btn.png');
+  -fx-background-image: url('../menu/food_btn.png');
   -fx-background-repeat: no-repeat;
   -fx-background-position: center;
   -fx-border-radius: 10 10 10 10;
@@ -63,7 +63,7 @@
 }
 
 #arrange_btn {
-  -fx-background-image: url('../../assets/menu/arrange_btn.png');
+  -fx-background-image: url('../menu/arrange_btn.png');
   -fx-background-repeat: no-repeat;
   -fx-background-position: center;
   -fx-border-radius: 10 10 10 10;
@@ -71,7 +71,7 @@
 }
 
 #pickup_btn {
-  -fx-background-image: url('../../assets/menu/pickup_btn.png');
+  -fx-background-image: url('../menu/pickup_btn.png');
   -fx-background-repeat: no-repeat;
   -fx-background-position: center;
   -fx-border-radius: 10 10 10 10;
@@ -79,7 +79,7 @@
 }
 
 #back_btn {
-  -fx-background-image: url('../../assets/etc/back.png');
+  -fx-background-image: url('../etc/back.png');
   -fx-background-repeat: no-repeat;
   -fx-background-position: center;
   -fx-border-radius: 10 10 10 10;
@@ -87,7 +87,7 @@
 }
 
 #clear_btn {
-  -fx-background-image: url('../../assets/etc/clear.png');
+  -fx-background-image: url('../etc/clear.png');
   -fx-background-repeat: no-repeat;
   -fx-background-position: center;
   -fx-border-radius: 10 10 10 10;
@@ -95,7 +95,7 @@
 }
 
 #random_btn {
-  -fx-background-image: url('../../assets/etc/random.png');
+  -fx-background-image: url('../etc/random.png');
   -fx-background-repeat: no-repeat;
   -fx-background-position: center;
   -fx-border-radius: 10 10 10 10;
@@ -103,7 +103,7 @@
 }
 
 #number_head {
-  -fx-background-image: url('../../assets/header/number.png');
+  -fx-background-image: url('../header/number.png');
   -fx-background-repeat: no-repeat;
   -fx-background-position: center;
   -fx-border-radius: 10 10 10 10;
