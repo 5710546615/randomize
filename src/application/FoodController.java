@@ -19,59 +19,57 @@ public class FoodController extends Controller {
 	@FXML
 	private Label randomed_lb;
 
+	private File file;
+	private Image image;
 	private static final String TYPE = "assets/food/type.txt";
 	private static final String SAUCE = "assets/food/sauce.txt";
 	private static final String MATERIAL = "assets/food/material.txt";
-
-	private File file;
-	private Image image;
-
+	private List<String> types, sauces, materials;
+	private List<List<String>> list;
 
 	public void initialize() {
 		file = new File("assets/header/food.png");
 		image = new Image(file.toURI().toString());
 		header_iv.setImage(image);
+
+		try {
+			types = reader(TYPE);
+			sauces = reader(SAUCE);
+			materials = reader(MATERIAL);
+
+			list = new ArrayList<List<String>>();
+			list.add(types);
+			list.add(sauces);
+			list.add(materials);
+		} catch (IOException e) {
+
+		}
 	}
 
 	public void handleRandom(ActionEvent event) throws IOException {
-		BufferedReader br;
-		List<String> types = new ArrayList<String>();
-		List<String> sauces = new ArrayList<String>();
-		List<String> materials = new ArrayList<String>();
-		String line;
-		String randomed;
+		String randomed = "";
 
-		br = new BufferedReader(new FileReader(TYPE));
-		while ((line = br.readLine()) != null) {
-			types.add(line);
+		for (int i = 0; i < list.size(); i++) {
+			rn.setMax(list.get(i).size() - 1);
+			randomed += "" + list.get(i).get(rn.getRandomed());
 		}
-		br.close();
-
-		br = new BufferedReader(new FileReader(SAUCE));
-		while ((line = br.readLine()) != null) {
-			sauces.add(line);
-		}
-		br.close();
-
-		br = new BufferedReader(new FileReader(MATERIAL));
-		while ((line = br.readLine()) != null) {
-			materials.add(line);
-		}
-		br.close();
-
-		rn.setMax(types.size() - 1);
-		randomed = "" + types.get(rn.getRandomed());
-
-		rn.setMax(sauces.size() - 1);
-		randomed += "" + sauces.get(rn.getRandomed());
-
-		rn.setMax(materials.size() - 1);
-		randomed += "" + materials.get(rn.getRandomed());
 
 		randomed_lb.setText(randomed);
 	}
 
 	public void handleClear(ActionEvent event) {
 		randomed_lb.setText("?");
+	}
+
+	public List<String> reader(String str) throws IOException {
+		List<String> tmp = new ArrayList<String>();
+		String line;
+
+		BufferedReader br = new BufferedReader(new FileReader(str));
+		while ((line = br.readLine()) != null) {
+			tmp.add(line);
+		}
+		br.close();
+		return tmp;
 	}
 }

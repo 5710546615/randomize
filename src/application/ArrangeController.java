@@ -18,7 +18,6 @@ public class ArrangeController extends Controller {
 	@FXML
 	private TextArea input_ta;
 
-	
 	private File file;
 	private Image image;
 
@@ -29,14 +28,14 @@ public class ArrangeController extends Controller {
 	}
 
 	public void handleRandom(ActionEvent event) {
-		String str = input_ta.getText().trim().replace(", ", ",").replace(" ,", "");
+		String str = input_ta.getText().trim().replaceAll("\\s+", "");
 
 		List<String> list = new ArrayList<String>(Arrays.asList(str.split(",")));
 		Collections.shuffle(list);
 
 		input_ta.setText(list.toString().replace("[", "").replaceAll("]", ""));
 	}
-	
+
 	public void handleClear(ActionEvent event) {
 		input_ta.clear();
 	}

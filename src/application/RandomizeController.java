@@ -18,10 +18,10 @@ import javafx.stage.Stage;
 public class RandomizeController {
 	@FXML
 	private ImageView logo_iv;
-	
+
 	private File file;
 	private Image image;
-	
+
 	public void initialize() {
 		file = new File("assets/etc/randomize.png");
 		image = new Image(file.toURI().toString());
@@ -43,14 +43,14 @@ public class RandomizeController {
 			controller.setRandomNumber(rn);
 
 			Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			stage.setScene(scene);
 			stage.sizeToScene();
-			stage.setTitle("Random Number");
+			stage.setResizable(false);
+			stage.setTitle(title);
 			stage.show();
-		} catch (Exception e) {
+		} catch (IOException e) {
 
 		}
 	}

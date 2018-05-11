@@ -22,6 +22,10 @@ public class RandomNumber {
 		return max;
 	}
 
+	public List<Integer> getRands() {
+		return rands;
+	}
+
 	public int getRandomed() {
 		Random rand = new Random();
 		int range = max - min + 1;
@@ -43,10 +47,6 @@ public class RandomNumber {
 		return randomed;
 	}
 
-	public List<Integer> getRands() {
-		return rands;
-	}
-
 	public void setMin(int min) {
 		this.min = min;
 	}
@@ -62,5 +62,4 @@ public class RandomNumber {
 	public void clearAll() {
 		rands = null;
 	}
-
 }

@@ -13,6 +13,8 @@ import javafx.scene.image.ImageView;
 
 public class NumberController extends Controller {
 	@FXML
+	private ImageView header_iv;
+	@FXML
 	private TextField min_tf;
 	@FXML
 	private TextField max_tf;
@@ -22,12 +24,10 @@ public class NumberController extends Controller {
 	private RadioButton norepeat_rb;
 	@FXML
 	private Label default_lb;
-	
+
 	private File file;
 	private Image image;
-	@FXML
-	ImageView header_iv;
-	
+
 	public void initialize() {
 		file = new File("assets/header/number.png");
 		image = new Image(file.toURI().toString());
@@ -54,27 +54,24 @@ public class NumberController extends Controller {
 
 		min_tf.setText(String.valueOf(min));
 		max_tf.setText(String.valueOf(max));
-
 		rn.setMin(min);
 		rn.setMax(max);
-
 		randomed = rn.getRandomed();
-
 		randomed_lb.setText(String.valueOf(randomed));
 
 		if (randomed == Integer.MIN_VALUE) {
 			randomed_lb.setText("?");
 		}
 	}
-	
+
 	public void handleClear(ActionEvent event) {
 		min_tf.clear();
 		max_tf.clear();
 		randomed_lb.setText("?");
 		norepeat_rb.setSelected(false);
 		default_lb.setVisible(true);
-		
-		rn.setRands(null);
+
+		rn.clearAll();
 		rn.setMin(0);
 		rn.setMax(99);
 	}

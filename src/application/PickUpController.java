@@ -22,9 +22,9 @@ public class PickUpController extends Controller {
 	private RadioButton norepeat_rb;
 	@FXML
 	private Label randomed_lb;
+
 	private File file;
 	private Image image;
-
 
 	public void initialize() {
 		file = new File("assets/header/pickup.png");
@@ -33,27 +33,22 @@ public class PickUpController extends Controller {
 	}
 
 	public void handleRandom(ActionEvent event) {
-
 		if (norepeat_rb.isSelected() && rn.getRands() == null) {
 			rn.setRands(new ArrayList<Integer>());
 		}
-
+		
 		String str = input_ta.getText().trim().replaceAll("\\s+", "");
-
 		List<String> list = new ArrayList<String>(Arrays.asList(str.split(",")));
-
 		int randomed = 0;
-
+		
 		rn.setMax(list.size() - 1);
-
 		randomed = rn.getRandomed();
-
+		
 		if (randomed != Integer.MIN_VALUE && !str.equals("")) {
 			randomed_lb.setText(list.get(randomed));
 		} else {
 			randomed_lb.setText("?");
 		}
-
 	}
 
 	public void handleClear(ActionEvent event) {

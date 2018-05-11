@@ -15,6 +15,7 @@ public class Main extends Application {
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			stage.setScene(scene);
 			stage.sizeToScene();
+			stage.setResizable(false);
 			stage.setTitle("Randomize");
 			stage.show();
 		} catch (Exception e) {

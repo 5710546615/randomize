@@ -20,10 +20,9 @@ public class DiceController extends Controller {
 	@FXML
 	private HBox list_hb;
 
-	
 	private File file;
 	private Image image;
-
+	private ImageView imageview;
 
 	public void initialize() {
 		file = new File("assets/header/dice.png");
@@ -33,9 +32,8 @@ public class DiceController extends Controller {
 
 	public void handleRandom(ActionEvent event) {
 		default_lb.setVisible(false);
-
 		int n = 1;
-
+		
 		try {
 			n = Integer.parseInt(num_tf.getText().trim());
 			if (n < 1 || n > 4) {
@@ -44,15 +42,11 @@ public class DiceController extends Controller {
 		} catch (Exception e) {
 
 		}
+		
 		num_tf.setText(String.valueOf(n));
-		File file;
-		Image image;
-		ImageView imageview;
-
 		list_hb.getChildren().clear();
-
+		
 		for (int i = 0; i < n; i++) {
-
 			file = new File("assets/dice/" + rn.getRandomed() + ".png");
 			image = new Image(file.toURI().toString());
 			imageview = new ImageView(image);

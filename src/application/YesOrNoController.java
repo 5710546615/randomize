@@ -10,9 +10,9 @@ import javafx.scene.layout.HBox;
 
 public class YesOrNoController extends Controller {
 	@FXML
-	private HBox list_hb;
+	private ImageView header_iv;
 	@FXML
-	ImageView header_iv;
+	private HBox list_hb;
 
 	private File file;
 	private Image image;
@@ -22,13 +22,13 @@ public class YesOrNoController extends Controller {
 		file = new File("assets/header/yesno.png");
 		image = new Image(file.toURI().toString());
 		header_iv.setImage(image);
-		
+
 		file = new File("assets/yesno/yesno.png");
 		image = new Image(file.toURI().toString());
 		imageview = new ImageView(image);
 		imageview.setFitHeight(212);
 		imageview.setFitWidth(450);
-		
+
 		list_hb.getChildren().add(imageview);
 	}
 
@@ -36,7 +36,6 @@ public class YesOrNoController extends Controller {
 		list_hb.getChildren().clear();
 
 		file = new File("assets/yesno/" + rn.getRandomed() + ".png");
-
 		image = new Image(file.toURI().toString());
 		imageview = new ImageView(image);
 		imageview.setFitHeight(212);
@@ -44,10 +43,10 @@ public class YesOrNoController extends Controller {
 
 		list_hb.getChildren().add(imageview);
 	}
-	
+
 	public void handleClear(ActionEvent event) {
 		list_hb.getChildren().clear();
-		
+
 		file = new File("assets/yesno/yesno.png");
 		image = new Image(file.toURI().toString());
 		imageview = new ImageView(image);

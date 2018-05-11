@@ -27,6 +27,8 @@ public class Controller {
 		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		stage.setScene(scene);
+		stage.setResizable(false);
+		stage.setTitle("Randomize");
 		stage.show();
 	}
 }

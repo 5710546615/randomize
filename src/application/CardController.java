@@ -17,13 +17,10 @@ public class CardController extends Controller {
 	private HBox list_hb;
 	@FXML
 	private Label numcard;
-	
-	
+
 	private File file;
 	private Image image;
-
-
-
+	private ImageView imageview;
 
 	public void initialize() {
 		file = new File("assets/header/card.png");
@@ -32,14 +29,10 @@ public class CardController extends Controller {
 	}
 
 	public void handleRandom(ActionEvent event) {
-		File file;
-		Image image;
-		ImageView imageview;
-
 		if (rn.getRands() == null) {
 			rn.setRands(new ArrayList<Integer>());
 		}
-
+		
 		list_hb.getChildren().clear();
 
 		file = new File("assets/card/" + rn.getRandomed() + ".png");
@@ -54,7 +47,7 @@ public class CardController extends Controller {
 
 	public void handleClear(ActionEvent event) {
 		list_hb.getChildren().clear();
-		rn.setRands(null);
+		rn.clearAll();
 		numcard.setText("Cards : 52");
 	}
 }

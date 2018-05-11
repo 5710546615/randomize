@@ -20,9 +20,9 @@ public class CoinController extends Controller {
 	@FXML
 	private HBox list_hb;
 
-	
 	private File file;
 	private Image image;
+	private ImageView imageview;
 
 	public void initialize() {
 		file = new File("assets/header/coin.png");
@@ -32,9 +32,8 @@ public class CoinController extends Controller {
 
 	public void handleRandom(ActionEvent event) {
 		default_lb.setVisible(false);
-
 		int n = 1;
-
+		
 		try {
 			n = Integer.parseInt(num_tf.getText().trim());
 			if (n < 1 || n > 4) {
@@ -43,11 +42,8 @@ public class CoinController extends Controller {
 		} catch (Exception e) {
 
 		}
+		
 		num_tf.setText(String.valueOf(n));
-		File file;
-		Image image;
-		ImageView imageview;
-
 		list_hb.getChildren().clear();
 
 		for (int i = 0; i < n; i++) {
@@ -56,7 +52,6 @@ public class CoinController extends Controller {
 			} else {
 				file = new File("assets/coin/" + rn.getRandomed() + ".png");
 			}
-
 			image = new Image(file.toURI().toString());
 			imageview = new ImageView(image);
 			imageview.setFitHeight(125);
