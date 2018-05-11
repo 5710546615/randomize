@@ -1,39 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<FlowPane hgap="10.0" prefHeight="400.0" prefWidth="600.0" vgap="10.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CoinController">
-   <padding>
-      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-   </padding>
-   <children>
-      <Button mnemonicParsing="false" onAction="#handleBack" text="&lt; Back" />
-      <Label alignment="CENTER" prefHeight="17.0" prefWidth="454.0" text="Coin Flipper" />
-      <Button mnemonicParsing="false" onAction="#handleClear" text="Recent" />
-      <TextField fx:id="num_tf" alignment="CENTER" promptText="No. of Coin (Max : 3)">
-         <FlowPane.margin>
-            <Insets left="210.0" />
-         </FlowPane.margin>
-      </TextField>
-      <Label fx:id="default_lb" text="(Default : 1)">
-         <FlowPane.margin>
-            <Insets left="255.0" />
-         </FlowPane.margin>
-      </Label>
-      <HBox fx:id="list_hb" alignment="CENTER" prefHeight="188.0" prefWidth="579.0">
-         <FlowPane.margin>
-            <Insets top="15.0" />
-         </FlowPane.margin>
-      </HBox>
-      <Button mnemonicParsing="false" onAction="#handleRandom" text="Flip">
-         <FlowPane.margin>
-            <Insets left="265.0" />
-         </FlowPane.margin>
-      </Button>
-   </children>
+<FlowPane hgap="25.0" prefHeight="400.0" prefWidth="600.0" vgap="25.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CoinController">
+	<children>
+		<HBox alignment="CENTER" prefHeight="44.0" prefWidth="550.0">
+			<children>
+				<ToggleButton id="back_btn" mnemonicParsing="false" onAction="#handleBack" prefHeight="30.0" prefWidth="100.0" />
+				<ImageView fx:id="header_iv" fitHeight="44.0" fitWidth="350.0" pickOnBounds="true" preserveRatio="true" />
+				<ToggleButton id="clear_btn" mnemonicParsing="false" onAction="#handleClear" prefHeight="30.0" prefWidth="100.0" />
+			</children>
+		</HBox>
+
+		<VBox prefHeight="212.0" prefWidth="550.0">
+
+
+			<children>
+				<HBox alignment="CENTER">
+					<children>
+						<TextField fx:id="num_tf" alignment="CENTER" prefHeight="40.0" prefWidth="175.0" promptText="No. of Coin (Max : 4)">
+							<font>
+								<Font size="16.0" />
+							</font>
+						</TextField>
+					</children>
+					<VBox.margin>
+						<Insets />
+					</VBox.margin>
+				</HBox>
+				<HBox alignment="CENTER">
+					<children>
+						<Label fx:id="default_lb" alignment="CENTER" prefHeight="30.0" prefWidth="95.0" text="( Default : 1 )">
+							<font>
+								<Font size="16.0" />
+							</font>
+						</Label>
+					</children>
+					<VBox.margin>
+						<Insets top="10.0" />
+					</VBox.margin>
+				</HBox>
+				<HBox fx:id="list_hb" alignment="CENTER" prefHeight="125.0" spacing="10.0">
+					<VBox.margin>
+						<Insets top="10.0" />
+					</VBox.margin>
+				</HBox>
+			</children>
+
+
+		</VBox>
+
+
+
+
+		<FlowPane alignment="CENTER" prefHeight="44.0" prefWidth="550.0">
+			<children>
+				<ToggleButton id="random_btn" mnemonicParsing="false" onAction="#handleRandom" prefHeight="44.0" prefWidth="150.0" />
+			</children>
+		</FlowPane>
+
+
+	</children>
+	<padding>
+		<Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+	</padding>
 </FlowPane>

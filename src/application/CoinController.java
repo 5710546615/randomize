@@ -18,41 +18,56 @@ public class CoinController extends Controller {
 	@FXML
 	private HBox list_hb;
 
+	File file;
+	Image image;
+	@FXML
+	ImageView header_iv;
+
+	public void initialize() {
+		file = new File("assets/header/coin.png");
+		image = new Image(file.toURI().toString());
+		header_iv.setImage(image);
+	}
+
 	public void handleRandom(ActionEvent event) {
 		default_lb.setVisible(false);
 
 		int n = 1;
+
 		try {
 			n = Integer.parseInt(num_tf.getText().trim());
+			if (n < 1 || n > 4) {
+				n = 1;
+			}
 		} catch (Exception e) {
-			num_tf.setText(String.valueOf(n));
-		}
 
+		}
+		num_tf.setText(String.valueOf(n));
 		File file;
 		Image image;
 		ImageView imageview;
 
 		list_hb.getChildren().clear();
 
-		if (n > 0 && n < 4) {
-			for (int i = 0; i < n; i++) {
-				if (n == 1) {
-					file = new File("assets/coin/" + rn.getRandomed() + ".png");
-				} else {
-					file = new File("assets/coin/" + rn.getRandomed() + ".png");
-				}
-
-				image = new Image(file.toURI().toString());
-				imageview = new ImageView(image);
-				imageview.setFitHeight(150);
-				imageview.setFitWidth(150);
-
-				list_hb.getChildren().add(imageview);
+		for (int i = 0; i < n; i++) {
+			if (n == 1) {
+				file = new File("assets/coin/" + rn.getRandomed() + ".png");
+			} else {
+				file = new File("assets/coin/" + rn.getRandomed() + ".png");
 			}
+
+			image = new Image(file.toURI().toString());
+			imageview = new ImageView(image);
+			imageview.setFitHeight(125);
+			imageview.setFitWidth(125);
+
+			list_hb.getChildren().add(imageview);
 		}
 	}
-	
+
 	public void handleClear(ActionEvent event) {
-		
+		num_tf.clear();
+		default_lb.setVisible(true);
+		list_hb.getChildren().clear();
 	}
 }

@@ -1,6 +1,7 @@
 package application;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -9,6 +10,8 @@ import java.util.List;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class FoodController extends Controller {
 	@FXML
@@ -17,6 +20,17 @@ public class FoodController extends Controller {
 	private static final String TYPE = "assets/food/type.txt";
 	private static final String SAUCE = "assets/food/sauce.txt";
 	private static final String MATERIAL = "assets/food/material.txt";
+
+	File file;
+	Image image;
+	@FXML
+	ImageView header_iv;
+
+	public void initialize() {
+		file = new File("assets/header/food.png");
+		image = new Image(file.toURI().toString());
+		header_iv.setImage(image);
+	}
 
 	public void handleRandom(ActionEvent event) throws IOException {
 		BufferedReader br;
@@ -55,8 +69,8 @@ public class FoodController extends Controller {
 
 		randomed_lb.setText(randomed);
 	}
-	
+
 	public void handleClear(ActionEvent event) {
-		
+		randomed_lb.setText("?");
 	}
 }

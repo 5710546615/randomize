@@ -11,71 +11,86 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<FlowPane hgap="25.0" prefHeight="400.0" prefWidth="600.0" vgap="25.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.NumberController">
-   <children>
-      <HBox alignment="CENTER" prefHeight="44.0" prefWidth="550.0">
-         <children>
-            <ToggleButton id="back_btn" mnemonicParsing="false" onAction="#handleBack" prefHeight="30.0" prefWidth="100.0" />
-            <ImageView fx:id="header_iv" fitHeight="44.0" fitWidth="350.0" pickOnBounds="true" preserveRatio="true" />
-            <ToggleButton id="clear_btn" mnemonicParsing="false" onAction="#handleClear" prefHeight="30.0" prefWidth="100.0" />
-         </children>
-      </HBox>
-      <VBox prefHeight="212.0" prefWidth="550.0">
-         <children>
-            <HBox alignment="CENTER" spacing="25.0">
-               <children>
-                  <TextField fx:id="min_tf" alignment="CENTER" prefHeight="44.0" prefWidth="75.0" promptText="MIN">
-                     <font>
-                        <Font size="16.0" />
-                     </font></TextField>
-                  <Label fx:id="default_lb" alignment="CENTER" prefHeight="27.0" prefWidth="129.0" text="( Default : 0-&gt;99 )">
-                     <font>
-                        <Font size="16.0" />
-                     </font></Label>
-                  <TextField fx:id="max_tf" alignment="CENTER" prefHeight="44.0" prefWidth="75.0" promptText="MAX">
-                     <font>
-                        <Font size="16.0" />
-                     </font></TextField>
-               </children>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-            </HBox>
-            <HBox alignment="CENTER">
-               <children>
-                  <RadioButton fx:id="norepeat_rb" mnemonicParsing="false" prefHeight="25.0" prefWidth="112.0" text="NO REPEAT" textFill="WHITE">
-                     <font>
-                        <Font size="16.0" />
-                     </font></RadioButton>
-               </children>
-               <VBox.margin>
-                  <Insets top="10.0" />
-               </VBox.margin>
-            </HBox>
-            <HBox alignment="CENTER">
-               <children>
-                  <Label fx:id="randomed_lb" alignment="CENTER" prefHeight="125.0" prefWidth="250.0" text="?">
-                     <font>
-                        <Font size="64.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin>
-                  </Label>
-               </children>
-               <VBox.margin>
-                  <Insets top="10.0" />
-               </VBox.margin>
-            </HBox>
-         </children>
-      </VBox>
-      <FlowPane alignment="CENTER" prefHeight="44.0" prefWidth="550.0">
-         <children>
-            <ToggleButton id="random_btn" mnemonicParsing="false" onAction="#handleRandom" prefHeight="44.0" prefWidth="150.0" />
-         </children>
-      </FlowPane>
-   </children>
-   <padding>
-      <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
-   </padding>
+<FlowPane hgap="25.0" prefHeight="400.0" prefWidth="600.0"
+	vgap="25.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="application.NumberController">
+	<children>
+		<HBox alignment="CENTER" prefHeight="44.0" prefWidth="550.0">
+			<children>
+				<ToggleButton id="back_btn" mnemonicParsing="false"
+					onAction="#handleBack" prefHeight="30.0" prefWidth="100.0" />
+				<ImageView fx:id="header_iv" fitHeight="44.0" fitWidth="350.0"
+					pickOnBounds="true" preserveRatio="true" />
+				<ToggleButton id="clear_btn" mnemonicParsing="false"
+					onAction="#handleClear" prefHeight="30.0" prefWidth="100.0" />
+			</children>
+		</HBox>
+		<VBox prefHeight="212.0" prefWidth="550.0">
+			<children>
+				<HBox alignment="CENTER" spacing="25.0">
+					<children>
+						<TextField fx:id="min_tf" alignment="CENTER" prefHeight="40.0"
+							prefWidth="75.0" promptText="MIN">
+							<font>
+								<Font size="16.0" />
+							</font>
+						</TextField>
+						<Label fx:id="default_lb" alignment="CENTER" prefHeight="30.0"
+							prefWidth="130.0" text="( Default : 0-&gt;99 )">
+							<font>
+								<Font size="16.0" />
+							</font>
+						</Label>
+						<TextField fx:id="max_tf" alignment="CENTER" prefHeight="40.0"
+							prefWidth="75.0" promptText="MAX">
+							<font>
+								<Font size="16.0" />
+							</font>
+						</TextField>
+					</children>
+					<VBox.margin>
+						<Insets />
+					</VBox.margin>
+				</HBox>
+				<HBox alignment="CENTER">
+					<children>
+						<RadioButton fx:id="norepeat_rb" mnemonicParsing="false"
+							prefHeight="25.0" prefWidth="112.0" text="NO REPEAT" textFill="WHITE">
+							<font>
+								<Font size="16.0" />
+							</font>
+						</RadioButton>
+					</children>
+					<VBox.margin>
+						<Insets top="10.0" />
+					</VBox.margin>
+				</HBox>
+				<HBox alignment="CENTER">
+					<children>
+						<Label fx:id="randomed_lb" alignment="CENTER" prefHeight="125.0"
+							prefWidth="330.0" text="?">
+							<font>
+								<Font size="64.0" />
+							</font>
+							<HBox.margin>
+								<Insets />
+							</HBox.margin>
+						</Label>
+					</children>
+					<VBox.margin>
+						<Insets top="10.0" />
+					</VBox.margin>
+				</HBox>
+			</children>
+		</VBox>
+		<FlowPane alignment="CENTER" prefHeight="44.0" prefWidth="550.0">
+			<children>
+				<ToggleButton id="random_btn" mnemonicParsing="false"
+					onAction="#handleRandom" prefHeight="44.0" prefWidth="150.0" />
+			</children>
+		</FlowPane>
+	</children>
+	<padding>
+		<Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+	</padding>
 </FlowPane>

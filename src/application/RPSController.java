@@ -23,6 +23,15 @@ public class RPSController extends Controller {
 	private ImageView imageview;
 	private int n;
 
+	@FXML
+	ImageView header_iv;
+
+	public void initialize() {
+		file = new File("assets/header/rps.png");
+		image = new Image(file.toURI().toString());
+		header_iv.setImage(image);
+	}
+
 	public void handleRandom(ActionEvent event) {
 		default_lb.setVisible(false);
 
@@ -64,8 +73,11 @@ public class RPSController extends Controller {
 			}
 		}
 	}
-	
+
 	public void handleClear(ActionEvent event) {
-		
+		default_lb.setVisible(true);
+		num_tf.clear();
+		list_fp.getChildren().clear();
+
 	}
 }

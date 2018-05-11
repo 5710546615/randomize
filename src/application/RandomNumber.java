@@ -1,21 +1,17 @@
 package application;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.Observable;
 
-public class RandomNumber extends Observable {
+public class RandomNumber {
 	private int min;
 	private int max;
 	private int randomed;
 	private List<Integer> rands;
-	private List<Integer> allNumbers;
 
 	public RandomNumber(int min, int max) {
 		this.min = min;
 		this.max = max;
-		allNumbers = new ArrayList<Integer>();
 	}
 
 	public int getMin() {
@@ -44,21 +40,11 @@ public class RandomNumber extends Observable {
 				randomed = Integer.MIN_VALUE;
 			}
 		}
-
-		if (randomed != Integer.MIN_VALUE)
-			allNumbers.add(randomed);
-
-		setChanged();
-		notifyObservers();
 		return randomed;
 	}
 
 	public List<Integer> getRands() {
 		return rands;
-	}
-
-	public List<Integer> getAllNumbers() {
-		return allNumbers;
 	}
 
 	public void setMin(int min) {
@@ -74,7 +60,6 @@ public class RandomNumber extends Observable {
 	}
 
 	public void clearAll() {
-		allNumbers = new ArrayList<Integer>();
 		rands = null;
 	}
 
