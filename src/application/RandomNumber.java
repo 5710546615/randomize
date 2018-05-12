@@ -13,8 +13,6 @@ public class RandomNumber {
 	private int min;
 	/** the maximum possible of random */
 	private int max;
-	/** the number between min and max */
-	private int randomed;
 	/** the store of random number */
 	private List<Integer> rands;
 
@@ -64,7 +62,7 @@ public class RandomNumber {
 	public int getRandomed() {
 		Random rand = new Random();
 		int range = max - min + 1;
-		randomed = rand.nextInt(range) + min;
+		int randomed = rand.nextInt(range) + min;
 
 		if (rands != null) {
 			if (!rands.contains(randomed)) {
